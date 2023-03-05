@@ -4,15 +4,16 @@
     font-family: sans-serif;
 }
 
-.form-box{
+.form-box {
     width: 380px;
     height: 480px;
     position: relative;
     margin: 6% auto;
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.85); /* Set the background color with 80% opacity */
     padding: 5px;
     overflow: hidden;
 }
+
 
 .button-box{
     width: 220px;
@@ -124,3 +125,9 @@ span{
 #terms{
     margin-bottom: -35px;
 }
+
+#logo {
+    width: 100px;
+    height: 100px;
+  }
+  
