@@ -1,6 +1,6 @@
 var cart = angular.module('cartpage', []);
 cart.controller('data-fetch', function ($scope, $http) {
-    $http.get('/menu selection/data.json')
+    $http.get('C:/Users/shari/Downloads/data.json')
         .then(function (response) {
             console.log(response.data[0].count);
             for (let index = 0; index < response.data.length; index++) {
