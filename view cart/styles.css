@@ -2,6 +2,19 @@
     height: 0.5%;
 }
 
-body{
-    font-family: 'Montserrat', sans-serif;
+body {
+    font-family: 'Tilt Prism', cursive;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.usr:hover {
+    transform: scale(1.2);
+    transition: transform .3s;
+    background-color: #898121;
+}
+
+
+#nvbar1{
+    background-color: #E7B10A;
 }
