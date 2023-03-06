@@ -1,6 +1,4 @@
-.t{
-	font-family: https://medialoot.com/blog/how-to-enable-opentype-features-in-word-photoshop-and-illustrator/;
-}
+
 body{
     background-color: gainsboro;
 }
@@ -32,3 +30,6 @@ table{
 	color: brown;
   }
   
+  .headbar{
+	background-color: #E7B10A;
+  }
