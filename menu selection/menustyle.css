@@ -1,35 +1,45 @@
-
-body{
-    background-color: gainsboro;
+body {
+	background-color: gainsboro;
+	font-family: 'Poppins', sans-serif;
 }
-.resturant{
+
+.resturant {
 	background-color: #FDEBED;
 }
-.a1{
+
+.a1 {
 	background-color: rgba(178, 161, 161, 0.16);
 }
-td{
+
+td {
 	padding-left: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-right: 15px;
 }
-table{
+
+table {
 	margin-left: auto;
-  	margin-right: auto;
+	margin-right: auto;
 }
+
 .b1:hover {
 	transform: scale(1.3);
 	transition: transform .5s ease;
-  }
-  .b2:hover {
+}
+
+.b2:hover {
 	transform: scale(1.2);
 	transition: transform .6s ease;
-  }
-  .t{
+}
+
+.t {
 	color: brown;
-  }
-  
-  .headbar{
+	font-family: 'Poppins', sans-serif;
+	font-weight: bolder;
+	font-size: xx-large;
+}
+
+.headbar {
 	background-color: #E7B10A;
-  }
+}

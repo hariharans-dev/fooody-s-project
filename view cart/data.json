@@ -1,19 +1,19 @@
 [
     {
         "name": "parotta",
-        "count": 0,
+        "count": 2,
         "img": "/resources/parotta.png",
         "price": 20
     },
     {
         "name": "dosa",
-        "count": 0,
+        "count": 10,
         "img": "/resources/dosa.png",
         "price": 35
     },
     {
         "name": "pasta",
-        "count": 0,
+        "count": 200,
         "img": "/resources/pasta.png",
         "price": 200
     },
