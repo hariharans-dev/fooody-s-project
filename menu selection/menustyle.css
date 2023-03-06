@@ -1,17 +1,5 @@
-.food{
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	animation: gradient 15s ease infinite;
-}
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+.t{
+	font-family: https://medialoot.com/blog/how-to-enable-opentype-features-in-word-photoshop-and-illustrator/;
 }
 body{
     background-color: gainsboro;
@@ -41,14 +29,6 @@ table{
 	transition: transform .6s ease;
   }
   .t{
-	padding-left: 4px;
-	padding-top: 3px;
-	padding-bottom: 4px;
-	padding-left: 3px;
-	color: rgb(216, 200, 200);
-	font-family: cursive;
-	background-color: rgba(9, 9, 9, 0.42);
-	border-radius: 5px;
-	font-size: xx-large;
-	font-weight: 800;
+	color: brown;
   }
+  
