@@ -5,11 +5,9 @@
 body{
     background-color: gainsboro;
 }
-
-.resturant {
-	background-color: #FDEBED;
+.food{
+	background-color: #E7B10A;
 }
-
 .a1 {
 	/* margin-top: 10px; */
 	background-color: white;
@@ -39,4 +37,7 @@ td {
   .t{
 	color: brown;
   }
-  
+  table{
+	margin-left: auto;
+	margin-right: auto;
+  }
