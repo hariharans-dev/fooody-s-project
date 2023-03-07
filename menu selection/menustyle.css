@@ -1,26 +1,44 @@
 .t{
 	font-family: 'Satisfy', cursive;
-	font-size: 50px;
-	color: brown;
+	font-size: xx-large;
 }
-.b1:hover {
-	transform: scale(1.2);
-	transition: transform .6s ease;
+body{
+    background-color: gainsboro;
 }
-.resturant{
+
+.resturant {
 	background-color: #FDEBED;
 }
-.a1{
+
+.a1 {
 	background-color: rgba(178, 161, 161, 0.16);
 }
-td{
+
+td {
 	padding-left: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-right: 15px;
 }
-table{
-	margin-left: auto;
-  	margin-right: auto;
-}
 
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+.b1:hover {
+	transform: scale(1.2);
+	transition: transform .5s ease;
+	background-color: #8f8f8e;
+  }
+  .b3:hover {
+	transform: scale(1.2);
+	transition: transform .5s ease;
+  }
+.b2:hover {
+	transform: scale(1.02);
+	transition: transform .6s ease;
+  }
+  .t{
+	color: brown;
+  }
+  
