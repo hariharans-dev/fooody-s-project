@@ -1,7 +1,7 @@
 let pdata;
 
 $.ajax({
-    url: "C: \\Users\\harih\\Downloads\\FigmaSetup.exe\\data.json",
+    url: "/resources/data.json",
     dataType: "json",
     success: function (data) {
         pdata = data;
