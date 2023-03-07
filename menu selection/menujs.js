@@ -17,23 +17,33 @@ function process(){
     let object=[
       {
         name:'parotta',
-        count:parotta
+        count:parotta,
+        img: "/resources/parotta.png",
+        price: 50
       },
       {
         name:'dosa',
-        count:dosa
+        count:dosa,
+        img: "/resources/dosa.png",
+        "price": 70
       },
       {
         name:'pasta',
-        count:pasta
+        count:pasta,
+        img: "/resources/tandoori.png",
+        price: 260
       },
       {
         name:'panner',
-        count:panner
+        count:panner,
+        img: "/resources/pasta.png",
+        price: 250
       },
       {
         name:'tandoori',
-        count:tandoori
+        count:tandoori,
+        "img": "/resources/panner masala.png",
+        "price": 200
       }
     ];
     let jsonString = JSON.stringify(object);
