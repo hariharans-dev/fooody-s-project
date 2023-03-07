@@ -30,19 +30,19 @@ function process(){
       {
         name:'pasta',
         count:pasta,
-        img: "/resources/tandoori.png",
+        img: "/resources/pasta.png",
         price: 260
       },
       {
         name:'panner',
         count:panner,
-        img: "/resources/pasta.png",
+        img: "/resources/panner masala.png",
         price: 250
       },
       {
         name:'tandoori',
         count:tandoori,
-        "img": "/resources/panner masala.png",
+        "img": "/resources/tandoori.png",
         "price": 200
       }
     ];
