@@ -41,3 +41,27 @@ td {
 	margin-left: auto;
 	margin-right: auto;
   }
+  @keyframes slideIn {
+    0% {
+        transform: translateX(-10%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideOut {
+    0% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+.left{
+	animation: slideIn 3s ease;
+}
+.right{
+	animation: slideOut 3s ease;
+}
