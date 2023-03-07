@@ -7,6 +7,7 @@
     <title>Foodys</title>
     <link rel="stylesheet" href="login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="login.js"></script>
 </head>
 <body style="background-image: url(pexels-ella-olsson-1640772.jpg); background-position: center; background-size: cover;">
@@ -20,8 +21,9 @@
         <div class="social-icons">
             <img src="fb.png" alt="">
             <img src="tw.png" alt="">
-            <img src="gp.png" alt="">
+            <img src="gp.png" alt=""></a>
         </div>
+        
         <form id="login" class="input-group">
             <input type="text" class="input-field" placeholder="User Id" required>
             <input type="password" class="input-field" placeholder="Enter Password" required>
@@ -57,60 +59,64 @@
         }
         $(document).ready(function() {
         $('#login').submit(function(e) {
-            e.preventDefault(); // prevent form submission
-            var userId = $('#login input[type="text"]').val(); // get user id input value
-            var password = $('#login input[type="password"]').val(); // get password input value
-            var userIdRegex = /^[a-zA-Z0-9]+$/; // regular expression for user id
-            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/; // regular expression for password
+            e.preventDefault(); 
+            var userId = $('#login input[type="text"]').val(); 
+            var password = $('#login input[type="password"]').val(); 
+            var userIdRegex = /^[a-zA-Z0-9]+$/; 
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/; 
 
-            if(!userIdRegex.test(userId)) { // check if user id matches the regular expression
+            if(!userIdRegex.test(userId)) { 
                 alert('User Id should only contain alphanumeric characters!');
-                return false; // stop form submission
+                return false; 
             }
 
-            if(!passwordRegex.test(password)) { // check if password matches the regular expression
+            if(!passwordRegex.test(password)) { 
                 alert('Password should contain at least 8 characters with at least one digit, one lowercase letter and one uppercase letter!');
-                return false; // stop form submission
+                return false; 
             }
 
             // if both inputs pass validation, submit the form
             alert('Form submitted successfully!');
-            $(this).load('/menu selection/menu.html');
             $('#login')[0].reset(); // reset form
         });
     });
 
     $(document).ready(function() {
         $('#register').submit(function(e) {
-            e.preventDefault(); // prevent form submission
-            var userId2 = $('#register input[type="text"]').val(); // get user id input value
-            var password2 = $('#register input[type="password"]').val(); // get password input value
+            e.preventDefault(); 
+            var userId2 = $('#register input[type="text"]').val(); 
+            var password2 = $('#register input[type="password"]').val(); 
             var email = $('#register input[type="email"]').val()
-            var userIdRegex2 = /^[a-zA-Z0-9]+$/; // regular expression for user id
+            var userIdRegex2 = /^[a-zA-Z0-9]+$/; 
             var passwordRegex2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/; 
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;// regular expression for password
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-            if(!userIdRegex2.test(userId2)) { // check if user id matches the regular expression
+            if(!userIdRegex2.test(userId2)) { 
                 alert('User Id should only contain alphanumeric characters!');
                 return false; // stop form submission
             }
 
-            if(!passwordRegex2.test(password2)) { // check if password matches the regular expression
+            if(!passwordRegex2.test(password2)) { 
                 alert('Password should contain at least 8 characters with at least one digit, one lowercase letter and one uppercase letter!');
                 return false; // stop form submission
             }
 
-            if(!emailRegex.test(email)) { // check if password matches the regular expression
+            if(!emailRegex.test(email)) { 
                 alert('Wrong email input');
-                return false; // stop form submission
+                return false; 
             }
 
-            // if both inputs pass validation, submit the form
+            
             alert('Form submitted successfully!');
             $(this).load('/menu selection/menu.html');
             $('#register')[0].reset(); // reset form
         });
     });
+
+    function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+
+}
     </script>
     <footer style="background-color: white; padding: 10px; text-align: center; font-size: 14px; color: #555;">
         &copy; 2023 Foodys. All rights reserved.
