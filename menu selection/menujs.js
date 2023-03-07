@@ -36,7 +36,7 @@ function process(){
       {
         name:'panner',
         count:panner,
-        img: "/resources/panner masala.png",
+        img: "/resources/panner.png",
         price: 250
       },
       {
