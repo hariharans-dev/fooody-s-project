@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="icon" href="/resources/original logo.jpg" type="image/x-icon">
     <script src="login.js"></script>
 </head>
 <body style="background-image: url(pexels-ella-olsson-1640772.jpg); background-position: center; background-size: cover;">
@@ -94,12 +95,12 @@
 
             if(!userIdRegex2.test(userId2)) { 
                 alert('User Id should only contain alphanumeric characters!');
-                return false; // stop form submission
+                return false; 
             }
 
             if(!passwordRegex2.test(password2)) { 
                 alert('Password should contain at least 8 characters with at least one digit, one lowercase letter and one uppercase letter!');
-                return false; // stop form submission
+                return false; 
             }
 
             if(!emailRegex.test(email)) { 
@@ -109,7 +110,7 @@
 
             
             alert('Form submitted successfully!');
-            $('#register')[0].reset(); // reset form
+            $('#register')[0].reset(); 
         });
     });
 

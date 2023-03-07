@@ -17,7 +17,7 @@ $.ajax({
             $("#table").append("<tr><th>Item</th><th>Price</th><th>Quantity</th><th>Rate</th></tr>")
             for (let index = 0; index < pdata.length; index++) {
                 if (pdata[index].count != 0) {
-                    var img = "<img class='item-image img-circle' src=" + pdata[index].img + ">";
+                    var img = "<img class='item-image img-thumbnail' src=" + pdata[index].img + ">";
                     var price = "<p>" + pdata[index].price + "</p>";
                     var quantity = "<p>" + pdata[index].count + "</p>";
                     var rate = "<p>" + pdata[index].price * pdata[index].count + "</p>";
