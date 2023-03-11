@@ -1,5 +1,5 @@
 .t{
-	font-family: 'Satisfy', cursive;
+  font-family: 'Tilt Warp', cursive;
 	font-size: xx-large;
 }
 body{
@@ -12,6 +12,11 @@ body{
 	/* margin-top: 10px; */
 	background-color: white;
 }
+#nvbar1{
+  height: fit-content;
+  
+}
+
 .back{
 	background-color: #f1f1ed;
 }
@@ -31,11 +36,12 @@ td {
 	transition: transform .5s ease;
   }
 .b2:hover {
-	transform: scale(1.02);
+	transform: scale(1);
 	transition: transform .6s ease;
   }
   .t{
 	color: brown;
+  font-size: large;
   }
   table{
 	margin-left: auto;

@@ -3,7 +3,9 @@
 }
 
 span {
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Tilt Warp', cursive;
+    color: brown;
     font-size: xx-large;
     font-weight: bolder;
 }
@@ -20,6 +22,8 @@ body{
 
 #nvbar1{
     background-color: #E7B10A;
+    height: 110px;
+    text-overflow: hidden;
 }
 
 @keyframes slideIn {
