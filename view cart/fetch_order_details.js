@@ -1,9 +1,6 @@
 let pdata;
 
-$.ajax({
-    url: "/resources/data.json",
-    dataType: "json",
-    success: function (data) {
+$.getJSON('/resources/data.json',function (data) {
         pdata = data;
         let checkEmpty=0;
         for (let index = 0; index < pdata.length; index++) {
@@ -34,10 +31,7 @@ $.ajax({
             $(".ecart-p").append("<a href='/menu selection/menu.html'><button class='glow-on-hover' type='button'>Menu</button></a>");
         }
     },
-    error: function (xhr, textStatus, errorThrown) {
-        console.log("Error retrieving JSON data:", errorThrown);
-    }
-});
+);
 
 
 
