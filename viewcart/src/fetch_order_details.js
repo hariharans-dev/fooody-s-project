@@ -1,7 +1,7 @@
 let pdata;
 
 $.ajax({
-    url: "/resources/data.json",
+    url: "src/data.json",
     dataType: "json",
     success: function (data) {
         pdata = data;

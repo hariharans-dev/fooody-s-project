@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodys</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
     <script src="login.js"></script>
 </head>
 <body style="background-image: url(pexels-ella-olsson-1640772.jpg); background-position: center; background-size: cover;">
@@ -28,7 +28,7 @@
             <input name="userid" type="text" class="input-field" placeholder="User Id" required>
             <input name="password" type="password" class="input-field" placeholder="Enter Password" required>
             <input type="checkbox" class="check-box"><span>Remember Password</span>
-            <button href="/menu selection/menu.html" class="submit-btn">Log In</button>
+            <button href="../menu/public/menu.html" class="submit-btn">Log In</button>
         </form>
         <form id="register" class="input-group">
             <input type="text" class="input-field" placeholder="User Id" required>
@@ -106,7 +106,7 @@
 
             
             alert('Form submitted successfully!');
-            $(this).load('/menu selection/menu.html');
+            $(this).load('../menu/public/menu.html');
             $('#register')[0].reset(); // reset form
         });
     });
