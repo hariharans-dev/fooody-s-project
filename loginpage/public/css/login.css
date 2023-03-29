@@ -90,11 +90,11 @@
     margin: 30px 15px 30px 15px;  
 }
 
-span{
+.label{
     color: #777;
     font-size: 12px;
-    bottom: 65px;
-    position: absolute;
+    /* bottom: 65px; */
+    /* position: absolute; */
 }
 
 #login{

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,20 +18,20 @@
         <div class="social-icons">
             <img src="resources/fb.png" alt="">
             <img src="resources/tw.png" alt="">
-            <img src="resources/gp.png" alt=""></a>
+            <img src="resources/gp.png" alt="">
         </div>
 
         <form id="login" class="input-group" method="GET" action="http://localhost:8000/loginform">
-            <input name="user" type="text" class="input-field" placeholder="User Id" required>
-            <input name="password" type="password" class="input-field" placeholder="Enter Password" required>
-            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <input type="text" class="input-field" name="user" placeholder="User Id" required="">
+            <input type="text" class="input-field" name="password" placeholder="Password" required="">
+            <input name="remember" type="checkbox" class="check-box"><label class="label" for="remember">Remember Password</label>
             <button class="submit-btn">Log In</button>
         </form>
         <form id="register" class="input-group" action="http://localhost:8000/signup">
-            <input type="text" class="input-field" name="user" placeholder="User Id" required>
-            <input type="email" class="input-field" name="email" placeholder="Email" required>
-            <input type="password" class="input-field" name="password" placeholder="Enter Password" required>
-            <input type="checkbox" class="check-box"><span id="terms">I agree to the terms & conditions</span>
+            <input type="text" class="input-field" name="user" placeholder="User Id" required="">
+            <input type="email" class="input-field" name="email" placeholder="Email" required="">
+            <input type="password" class="input-field" name="password" placeholder="Enter Password" required="">
+            <input type="checkbox" class="check-box"><label class="label" for="remember">I agree to the terms &amp; conditions</label>
             <button type="submit" class="submit-btn">Register</button>
             <!-- <input type="submit" class="submit-btn"> -->
         </form>
@@ -55,6 +53,10 @@
             y.style.left = "450px";
             z.style.left = "0";
         }
+
+
+
+
     //     $(document).ready(function() {
     //     $('#login').submit(function(e) {
     //         e.preventDefault(); 
@@ -117,7 +119,8 @@
 }
     </script>
     <footer style="background-color: white; padding: 10px; text-align: center; font-size: 14px; color: #555;">
-        &copy; 2023 Foodys. All rights reserved.
+        © 2023 Foodys. All rights reserved.
      </footer>
-</body>
-</html>
+
+
+</body></html>

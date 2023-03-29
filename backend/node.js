@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 const express = require('express')
+const fs = require('fs')
+const cheerio = require('cheerio')
 const path = require('path')
 const app=express()
 
@@ -19,6 +21,12 @@ app.listen(8000,(req,res)=>{
 
 
 app.get('/',(req,res)=>{
+    const html = fs.readFileSync(path.join(__dirname,"../loginpage/public/login.html"), 'utf-8')
+    const $ = cheerio.load(html)
+    const pTag = $('#replace')
+    pTag.text('')
+    fs.writeFileSync(path.join(__dirname,"../loginpage/public/login.html"), $.html())
+
     console.log('login page is loaded')
     const staticpath1 = path.join(__dirname,"../loginpage/public")
     app.use(express.static(staticpath1))
@@ -54,6 +62,14 @@ app.get('/signup',(req,res)=>{
         console.log('data not created')
         const staticpath1 = path.join(__dirname,"../loginpage/public")
         app.use(express.static(staticpath1))
+
+
+        const html = fs.readFileSync(path.join(__dirname,"../loginpage/public/login.html"), 'utf-8')
+        const $ = cheerio.load(html)
+        const pTag = $('#replace')
+        pTag.text('user name already taken!')
+        fs.writeFileSync(path.join(__dirname,"../loginpage/public/login.html"), $.html());
+
         res.sendFile(path.join(__dirname,"../loginpage/public/login.html"))
     })
 
