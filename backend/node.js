@@ -54,9 +54,18 @@ app.get('/signup',(req,res)=>{
     })
     .then(()=>{
         console.log('data created')
-        const staticpath2 = path.join(__dirname,"../menu/public")
-        app.use(express.static(staticpath2))
-        res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
+        const staticpath1 = path.join(__dirname,"../loginpage/public")
+        app.use(express.static(staticpath1))
+
+
+        const html = fs.readFileSync(path.join(__dirname,"../loginpage/public/login.html"), 'utf-8')
+        const $ = cheerio.load(html)
+        const pTag = $('#replace')
+        pTag.text('New user created!')
+        fs.writeFileSync(path.join(__dirname,"../loginpage/public/login.html"), $.html());
+
+        res.sendFile(path.join(__dirname,"../loginpage/public/login.html"))
+
     })
     .catch(err=>{
         console.log('data not created')

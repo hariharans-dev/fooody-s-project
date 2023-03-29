@@ -101,6 +101,13 @@
     left: 50px;
 }
 
+#replace{
+    text-align: center;
+    font-size: medium;
+    padding-top: 40px;
+    color: red;
+}
+
 #register{
     position: absolute;
     left: 450px;
