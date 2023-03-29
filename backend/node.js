@@ -46,7 +46,6 @@ app.get('/signup',(req,res)=>{
     const obj=req.query
     console.log('signup page details is processed')
 
-
     user.create({
         username: obj['user'],
         email: obj['email'],
@@ -56,7 +55,6 @@ app.get('/signup',(req,res)=>{
         console.log('data created')
         const staticpath1 = path.join(__dirname,"../loginpage/public")
         app.use(express.static(staticpath1))
-
 
         const html = fs.readFileSync(path.join(__dirname,"../loginpage/public/login.html"), 'utf-8')
         const $ = cheerio.load(html)
@@ -71,7 +69,6 @@ app.get('/signup',(req,res)=>{
         console.log('data not created')
         const staticpath1 = path.join(__dirname,"../loginpage/public")
         app.use(express.static(staticpath1))
-
 
         const html = fs.readFileSync(path.join(__dirname,"../loginpage/public/login.html"), 'utf-8')
         const $ = cheerio.load(html)
@@ -91,13 +88,14 @@ app.get('/signup',(req,res)=>{
 //     res.sendFile(path.join(__dirname,"../viewcart/public/cart.html"))
 // })
 
+
 app.get('/loginform',(req,res)=>{
 
     const username=req.query['user']
     const password=req.query['password']
     var found=0
     var index
-    // res.send(username+" "+password)
+
     user.find({},{_id:0,username:1,password:1})
     .then((result)=>{
         for(let i=0;i<result.length;i++){
@@ -107,6 +105,7 @@ app.get('/loginform',(req,res)=>{
                 break
             }
         }
+
         if((found==1)&&(password==result[index]['password'])){
             console.log('can login')
 
@@ -118,7 +117,6 @@ app.get('/loginform',(req,res)=>{
             const pTag = $('#replace')
             pTag.text('Welcome '+username)
             fs.writeFileSync(path.join(__dirname,"../menu/public/menu.html"), $.html());
-
 
             res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
         }
