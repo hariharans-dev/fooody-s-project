@@ -112,6 +112,14 @@ app.get('/loginform',(req,res)=>{
 
             const staticpath3 = path.join(__dirname,"../menu/public")
             app.use(express.static(staticpath3))
+
+            const html = fs.readFileSync(path.join(__dirname,"../menu/public/menu.html"), 'utf-8')
+            const $ = cheerio.load(html)
+            const pTag = $('#replace')
+            pTag.text('Welcome '+username)
+            fs.writeFileSync(path.join(__dirname,"../menu/public/menu.html"), $.html());
+
+
             res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
         }
         else if(found==1){

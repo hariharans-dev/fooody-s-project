@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,23 +11,22 @@
 </head>
 
 <body ng-app="">
-  <div class="food container-md rounded">
-    <div class="navbar">
+  <div class="food container-fluid rounded">
+    <div class="d-flex justify-content-between">
       <div class="t b2"><img src="resources/transparent logo.png" alt="photo" width="150px" height="150px">Fooody's</div>
-      <div class="text-white text-right b3 rounded"><a class="btn" href="/login page/login.html" role="button"><img src="/resources/usrimg.png" alt="user" width="50px"></a></div>
+      <div class="d-flex">
+        <div id="replace" class="h1 text-right username">Welcome Thala</div>
+        <div class="text-white text-right b3 rounded loginmenu"><a class="btn" href="/login page/login.html" role="button"><img src="/resources/usrimg.png" alt="user" width="50px"></a></div>
+      </div>
     </div>
-
   </div>
-  <div class="resturant">
-    <div class="navbar">
-      <div class="resturantname">
+  <div class="mt-3 justify-content-between d-flex container-md">
+      <div class="">
         <div class="h3">Hotel Fortune park</div>
         <div>This is a fine dining restuarant located in vellore<br>It is a five star restuarant</div>
         <div class="text-left mt-2"><a href="https://goo.gl/maps/neLT2fwgvA7Lf2LP7" class="btn btn-dark b1" role="button" target="_blank">Location</a></div>
       </div>
       <div class=""><img src="resources/fortunepark.png" alt="fortunepark" width="400px" height="200px"></div>
-      <div></div>
-    </div>
   </div>
   <br>
   <div class="back mt-0">
@@ -44,7 +40,7 @@
             <div class="">Bread made of wheat flour which is fluffy and slightly crispy </div>
             <div class="mt-3 mb-3 text-left">
               <table class="ml-0">
-                <tr>
+                <tbody><tr>
                   <td>Quantity </td>
                   <td><input class="b2" type="number" id="parotta" ng-init="paro=0" ng-model="paro"></td>
                 </tr>
@@ -54,7 +50,7 @@
                     <p class="pt-3">Rs. {{50*paro}}</p>
                   </td>
                 </tr>
-              </table>
+              </tbody></table>
             </div>
           </div>
         </div>
@@ -68,7 +64,7 @@
             <div class="">It is a cripy batter roasted to prefection served with sambar</div>
             <div class="mt-3 mb-3">
               <table class="ml-0">
-                <tr>
+                <tbody><tr>
                   <td>Quantity </td>
                   <td><input class="b2" type="number" ng-init="dos=0" ng-model="dos" id="dosa"></td>
                 </tr>
@@ -78,7 +74,7 @@
                     <p class="pt-3 text-left">Rs. {{70*dos}}</p>
                   </td>
                 </tr>
-              </table>
+              </tbody></table>
             </div>
           </div>
           <div><img src="resources/dosa.png" alt="dosa" height="250px" width="250px"></div>
@@ -94,7 +90,7 @@
             <div class="">Spicy chicken roasted in a tandoor oven with a smoky flavor</div>
             <div class="mt-3 text-center">
               <table class="ml-0">
-                <tr>
+                <tbody><tr>
                   <td>Quantity </td>
                   <td><input class="b2" type="number" ng-init="tand=0" ng-model="tand" id="tandoori"></td>
                 </tr>
@@ -104,7 +100,7 @@
                     <p class="pt-3 text-left">Rs. {{200*tand}}</p>
                   </td>
                 </tr>
-              </table>
+              </tbody></table>
             </div>
           </div>
         </div>
@@ -118,7 +114,7 @@
             <div class="">Delicately made pasta in a sauce</div>
             <div class="mt-3 mb-3">
               <table class="ml-0">
-                <tr>
+                <tbody><tr>
                   <td>Quantity </td>
                   <td><input class="b2" type="number" ng-init="past=0" ng-model="past" id="pasta"></td>
                 </tr>
@@ -128,7 +124,7 @@
                     <p class="pt-3 text-left">Rs. {{260*past}}</p>
                   </td>
                 </tr>
-              </table>
+              </tbody></table>
             </div>
           </div>
           <div><img src="resources/pasta.png" alt="pasta" height="250px" width="250px"></div>
@@ -144,7 +140,7 @@
             <div class="">Freshly made panner in a hot masala</div>
             <div class="mt-3 mb-3 text-center">
               <table class="ml-0">
-                <tr>
+                <tbody><tr>
                   <td>Quantity </td>
                   <td><input class="b2" type="number" ng-init="pann=0" ng-model="pann" id="panner"></td>
                 </tr>
@@ -154,7 +150,7 @@
                     <p class="pt-3 text-left">Rs. {{pann*250}}</p>
                   </td>
                 </tr>
-              </table>
+              </tbody></table>
             </div>
           </div>
         </div>
@@ -169,7 +165,7 @@
     <div class="h5 text-center mt-5">Contact Details</div>
     <div class="pb-5 pt-3">
       <table class="border">
-        <tr>
+        <tbody><tr>
           <td>Arvind Kumar</td>
           <td>963548959</td>
           <td>https://www.linkedin.com/in/thearvikumar/</td>
@@ -184,11 +180,11 @@
           <td>9360745166</td>
           <td>https://www.linkedin.com/in/hariharan-s-562027226/</td>
         </tr>
-      </table>
+      </tbody></table>
     </div>
   </div>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="../src/menujs.js"></script>
-</body>
 
-</html>
+
+</body></html>

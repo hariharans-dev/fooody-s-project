@@ -65,3 +65,10 @@ td {
 .right{
 	animation: slideOut 3s ease;
 }
+.username,.loginmenu{
+  padding-top: 45px;
+}
+.username{
+  padding-top: 52px;
+  margin-right: 10px;
+}
