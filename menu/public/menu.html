@@ -15,13 +15,13 @@
     <div class="d-flex justify-content-between">
       <div class="t b2"><img src="resources/transparent logo.png" alt="photo" width="150px" height="150px">Fooody's</div>
       <div class="d-flex">
-        <div id="replace" class="h1 text-right username">Welcome Thala</div>
+        <div id="replace" class="h5 mt-3 text-right username">Welcome Hariharan S</div>
         <div class="text-white text-right b3 rounded loginmenu"><a class="btn" href="/login page/login.html" role="button"><img src="/resources/usrimg.png" alt="user" width="50px"></a></div>
       </div>
     </div>
   </div>
   <div class="mt-3 justify-content-between d-flex container-md">
-      <div class="">
+      <div class="details">
         <div class="h3">Hotel Fortune park</div>
         <div>This is a fine dining restuarant located in vellore<br>It is a five star restuarant</div>
         <div class="text-left mt-2"><a href="https://goo.gl/maps/neLT2fwgvA7Lf2LP7" class="btn btn-dark b1" role="button" target="_blank">Location</a></div>
@@ -29,20 +29,21 @@
       <div class=""><img src="resources/fortunepark.png" alt="fortunepark" width="400px" height="200px"></div>
   </div>
   <br>
+  <form action="http://localhost:8000/menu" method="GET">
   <div class="back mt-0">
-    <div class="container pt-5 pb-5">
+    <div class="container-sm pt-5 pb-5">
       <div class="parotta left a1 rounded">
-        <div class="navbar">
-          <div><img src="resources/parotta.png" alt="parotta" height="250px" width="250px"></div>
-          <div class="text-right">
+        <div class="d-flex justify-content-around">
+          <div class="mt-4"><img src="resources/parotta.png" alt="parotta" height="250px" width="250px"></div>
+          <div class="">
             <div class="display-3 text-left mb-5">Parotta</div>
             <div class="h4 text-left">Description</div>
             <div class="">Bread made of wheat flour which is fluffy and slightly crispy </div>
             <div class="mt-3 mb-3 text-left">
-              <table class="ml-0">
+              <table class="">
                 <tbody><tr>
                   <td>Quantity </td>
-                  <td><input class="b2" type="number" id="parotta" ng-init="paro=0" ng-model="paro"></td>
+                  <td><input class="b2" name="parotta" type="number" id="parotta" ng-init="paro=0" ng-model="paro"></td>
                 </tr>
                 <tr>
                   <td class="pt-2 pb-2 pr-2">Price</td>
@@ -57,8 +58,8 @@
       </div>
       <br>
       <div class="dosa right a1 rounded">
-        <div class="navbar">
-          <div class="text-left">
+        <div class="d-flex justify-content-around">
+          <div class="">
             <div class="display-3 text-left mb-5">Dosa</div>
             <div class="h4 text-left">Description</div>
             <div class="">It is a cripy batter roasted to prefection served with sambar</div>
@@ -66,7 +67,7 @@
               <table class="ml-0">
                 <tbody><tr>
                   <td>Quantity </td>
-                  <td><input class="b2" type="number" ng-init="dos=0" ng-model="dos" id="dosa"></td>
+                  <td><input name="dosa" class="b2" type="number" ng-init="dos=0" ng-model="dos" id="dosa"></td>
                 </tr>
                 <tr>
                   <td class="pt-2 pb-2 pr-2">Price</td>
@@ -77,13 +78,13 @@
               </tbody></table>
             </div>
           </div>
-          <div><img src="resources/dosa.png" alt="dosa" height="250px" width="250px"></div>
+          <div class="pr-3"><img class="mt-4" src="resources/dosa.png" alt="dosa" height="250px" width="250px"></div>
         </div>
       </div>
       <br>
       <div class="tandoori left a1 rounded">
-        <div class="navbar">
-          <div><img src="resources/tandoori.png" alt="tandoori" height="250px" width="250px"></div>
+        <div class="d-flex justify-content-around">
+          <div><img class="mt-4" src="resources/tandoori.png" alt="tandoori" height="250px" width="250px"></div>
           <div class="text-center">
             <div class="display-3 text-left mb-5">Tandoori</div>
             <div class="h4 text-left">Description</div>
@@ -92,10 +93,10 @@
               <table class="ml-0">
                 <tbody><tr>
                   <td>Quantity </td>
-                  <td><input class="b2" type="number" ng-init="tand=0" ng-model="tand" id="tandoori"></td>
+                  <td><input name="tandoori" class="b2" type="number" ng-init="tand=0" ng-model="tand" id="tandoori"></td>
                 </tr>
                 <tr>
-                  <td class="text-left pl-1">Price</td>
+                  <td class="">Price</td>
                   <td>
                     <p class="pt-3 text-left">Rs. {{200*tand}}</p>
                   </td>
@@ -107,7 +108,7 @@
       </div>
       <br>
       <div class="pasta a1 right rounded">
-        <div class="navbar">
+        <div class="d-flex justify-content-around">
           <div class="">
             <div class="display-3 text-left mb-5">Pasta</div>
             <div class="h4 text-left">Description</div>
@@ -116,7 +117,7 @@
               <table class="ml-0">
                 <tbody><tr>
                   <td>Quantity </td>
-                  <td><input class="b2" type="number" ng-init="past=0" ng-model="past" id="pasta"></td>
+                  <td><input name="pasta" class="b2" type="number" ng-init="past=0" ng-model="past" id="pasta"></td>
                 </tr>
                 <tr>
                   <td class="pt-2 pb-2 pr-2">Price</td>
@@ -127,13 +128,13 @@
               </tbody></table>
             </div>
           </div>
-          <div><img src="resources/pasta.png" alt="pasta" height="250px" width="250px"></div>
+          <div><img class="mt-4" src="resources/pasta.png" alt="pasta" height="250px" width="250px"></div>
         </div>
       </div>
       <br>
       <div class="panner left a1 rounded">
-        <div class="navbar">
-          <div><img src="resources/panner.png" alt="panner" height="250px" width="250px"></div>
+        <div class="d-flex justify-content-around">
+          <div><img class="mt-4" src="resources/panner.png" alt="panner" height="250px" width="250px"></div>
           <div class="">
             <div class="display-3 text-left mb-5">Panner<br>butter masala</div>
             <div class="h4 text-left">Description</div>
@@ -142,7 +143,7 @@
               <table class="ml-0">
                 <tbody><tr>
                   <td>Quantity </td>
-                  <td><input class="b2" type="number" ng-init="pann=0" ng-model="pann" id="panner"></td>
+                  <td><input name="panner" class="b2" type="number" ng-init="pann=0" ng-model="pann" id="panner"></td>
                 </tr>
                 <tr>
                   <td class="pt-2 pb-2 text-left pr-2">Price</td>
@@ -158,8 +159,9 @@
     </div>
   </div>
   <div class="pb-5 back">
-    <div class="text-center text-white h1"><a href="/view cart/cart.html" class="b1 btn btn-dark pt-2 pb-2 pl-3 pr-3" role="button" onclick="process()">View cart</a></div>
+    <div class="text-center text-white h1"><input class="b1 btn btn-dark pt-2 pb-2 pl-3 pr-3" type="submit" value="View cart"></div>
   </div>
+  </form>
   <div class="bg-dark text-white">
     <div class="text-center">Developed by Arvind Kumar | Hariharan J | Hariharan S</div>
     <div class="h5 text-center mt-5">Contact Details</div>

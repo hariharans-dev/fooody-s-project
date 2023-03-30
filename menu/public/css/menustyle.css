@@ -37,7 +37,7 @@ td {
   .t{
 	color: brown;
   }
-  table{
+  .border{
 	margin-left: auto;
 	margin-right: auto;
   }
@@ -71,4 +71,7 @@ td {
 .username{
   padding-top: 52px;
   margin-right: 10px;
+}
+.details{
+  vertical-align: middle;
 }
