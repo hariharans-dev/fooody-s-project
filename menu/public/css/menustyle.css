@@ -1,6 +1,7 @@
 .t{
 	font-family: 'Satisfy', cursive;
 	font-size: xx-large;
+  color: brown;
 }
 body{
     background-color: gainsboro;
@@ -33,9 +34,6 @@ td {
 .b2:hover {
 	transform: scale(1.02);
 	transition: transform .6s ease;
-  }
-  .t{
-	color: brown;
   }
   .border{
 	margin-left: auto;
@@ -74,4 +72,8 @@ td {
 }
 .details{
   vertical-align: middle;
+}
+.submit{
+  position: sticky;
+  bottom: 10%;
 }
