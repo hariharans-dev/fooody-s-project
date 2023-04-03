@@ -86,20 +86,20 @@ app.get('/loginform',(req,res)=>{
 
     const username=req.query['user']
     const password=req.query['password']
-    var found=0
-    var index
+    let found = 0;
+    let index;
 
     user.find({},{_id:0,username:1,password:1})
     .then((result)=>{
         for(let i=0;i<result.length;i++){
-            if(username==result[i]['username']){
+            if(username===result[i]['username']){
                 found=1
                 index=i
                 break
             }
         }
 
-        if((found==1)&&(password==result[index]['password'])){
+        if((found===1)&&(password===result[index]['password'])){
             console.log('can login')
 
             const staticpath3 = path.join(__dirname,"../menu/public")
@@ -113,7 +113,7 @@ app.get('/loginform',(req,res)=>{
 
             res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
         }
-        else if(found==1){
+        else if(found===1){
             console.log('invalid password')
 
             const staticpath1 = path.join(__dirname,"../loginpage/public")
@@ -146,7 +146,7 @@ app.get('/loginform',(req,res)=>{
 
 })
 
-var obj
+let obj;
 
 app.get('/menu',(req,res)=>{
     console.log('menu page')
