@@ -67,8 +67,8 @@ td {
   padding-top: 45px;
 }
 .username{
-  padding-top: 52px;
-  margin-right: 10px;
+  padding-top: 45px;
+  margin-right: 20px;
 }
 .details{
   vertical-align: middle;
@@ -76,4 +76,22 @@ td {
 .submit{
   position: sticky;
   bottom: 10%;
+}
+
+td{
+  text-align: center;
+}
+.popbox,.password{
+  position: fixed;
+  top: 12%;
+  right: 1%;
+  background-color: #eae6daeb;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  border: 1px solid;
+}
+.it{
+  padding-right: 30px;
 }
