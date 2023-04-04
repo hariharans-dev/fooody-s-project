@@ -110,7 +110,7 @@ app.get('/loginform',(req,res)=>{
 
             const html = fs.readFileSync(path.join(__dirname,"../menu/public/menu.html"), 'utf-8')
             const $ = cheerio.load(html)
-            $('#replace').text('Welcome '+username)
+            $('#replace').text('Welcome '+customer)
             fs.writeFileSync(path.join(__dirname,"../menu/public/menu.html"), $.html());
 
             res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
@@ -221,9 +221,31 @@ app.get('/menu',(req,res)=>{
         console.log('previous data stored')
     })
     .catch(err=>{
-        console.log('error in adding data in perivousorders')
+        console.log('error in adding data in perivous orders')
     })
+})
 
-    // db.close()
+app.get('/signout',(req,res)=>{
+    const html = fs.readFileSync(path.join(__dirname,"../loginpage/public/login.html"), 'utf-8')
+    const $ = cheerio.load(html)
+    const pTag = $('#replace')
+    pTag.text('successfully signed out')
+    fs.writeFileSync(path.join(__dirname,"../loginpage/public/login.html"), $.html())
+
+    console.log('login page is loaded')
+    const staticpath1 = path.join(__dirname,"../loginpage/public")
+    app.use(express.static(staticpath1))
+    res.sendFile(path.join(__dirname,"../loginpage/public/login.html"))
+})
+
+app.get('/updatepass',(req,res)=>{
+
+    const oldpass=req.query['oldpass']
+    const newpass=req.query['newpass']
+
+    
+
+    const staticpath2 = path.join(__dirname,"../menu/public")
+    res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
 })
 
