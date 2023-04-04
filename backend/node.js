@@ -87,15 +87,10 @@ app.get('/loginform',(req,res)=>{
 
     const username=req.query['user']
     const password=req.query['password']
-<<<<<<< HEAD
 
     var found=0
     customer=username
     var index
-=======
-    let found = 0;
-    let index;
->>>>>>> d27f598118376b4df152c2a1493786f291029a39
 
     user.find({},{_id:0,username:1,password:1})
     .then((result)=>{
@@ -150,11 +145,8 @@ app.get('/loginform',(req,res)=>{
     .catch(err=>{console.log('error in finding')})
 })
 
-<<<<<<< HEAD
-=======
-let obj;
+let obj
 
->>>>>>> d27f598118376b4df152c2a1493786f291029a39
 app.get('/menu',(req,res)=>{
 
     console.log('menu page')
