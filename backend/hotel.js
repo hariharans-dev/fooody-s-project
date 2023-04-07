@@ -38,6 +38,8 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,"../hotel/public/hotellogin.html"))
 })
 
+var hname
+
 app.get('/hotellogin',(req,res)=>{
 
     const hotelname=req.query['user']
@@ -62,6 +64,7 @@ app.get('/hotellogin',(req,res)=>{
 
             if((found===1)&&(password===result[index]['password'])){
                 console.log('can login')
+                hname=hotelname
 
                 var menuschema=new mongoose.Schema({
                     hotel:{type:String},
@@ -90,6 +93,7 @@ app.get('/hotellogin',(req,res)=>{
                         const html = fs.readFileSync(path.join(__dirname,"../hotel/public/costchanges.html"), 'utf-8')
                         const $ = cheerio.load(html)
                         $('#table').text('')
+                        $('#replace').text('')
 
                         $('#table').append("<tr><th class='th'>Item</th><th class='th'>Price</th></tr>")
 
@@ -134,5 +138,78 @@ app.get('/hotellogin',(req,res)=>{
             }
         })
         .catch(err=>{console.log('error in finding')})
+})
+
+
+app.get('/changes',(req,res)=>{
+    var obj=req.query
+    console.log(obj)
+
+    var menuschema=new mongoose.Schema({
+        hotel:{type:String},
+        parotta: {type:Number},
+        dosa: {type:Number},
+        tandoori: {type:Number},
+        pasta: {type:Number},
+        panner: {type:Number}
+    },{collection:'costoffoods'})
+
+    var menuupdate=mongoose.model("menuupdate",menuschema)
+
+    menuupdate.updateOne({hotel:hname},{$set:{
+        parotta:obj['parotta'],
+        dosa:obj['dosa'],
+        tandoori:obj['tandoori'],
+        panner:obj['panner'],
+        pasta:obj['pasta']
+    }})
+    .then(()=>{
+        console.log('costs are updated')
+        var menuschema=new mongoose.Schema({
+            hotel:{type:String},
+            parotta: {type:Number},
+            dosa: {type:Number},
+            tandoori: {type:Number},
+            pasta: {type:Number},
+            panner: {type:Number}
+        },{collection:'costoffoods'})
+
+        var menuuser1=mongoose.model("menuuser1",menuschema)
+        var prices
+        var items
+
+
+        menuuser1.find({hotel: hname},{_id:0,__v:0,hotel:0})
+            .then((result)=>{
+                jsonstring=JSON.stringify(result)
+                jsonobj=JSON.parse(jsonstring)
+                prices=Object.values(jsonobj[0])
+                items=Object.keys(jsonobj[0])
+                console.log(prices)
+                console.log(items)
+                const staticpath3 = path.join(__dirname,"../hotel/public")
+
+                const html = fs.readFileSync(path.join(__dirname,"../hotel/public/costchanges.html"), 'utf-8')
+                const $ = cheerio.load(html)
+                $('#table').text('')
+                $('#replace').text('Costs updated')
+
+                $('#table').append("<tr><th class='th'>Item</th><th class='th'>Price</th></tr>")
+
+                for (let index = 0; index < prices.length; index++) {
+                    // var img = "<img class='item-image img-circle' src=" + imageslinks[index] + ">"
+                    var price = "<p>" + prices[index] + "</p>"
+                    $("#table").append("<tr><td class='item th'>" + "<p class='name'>" + items[index].toUpperCase() + "</p>" + "</td>" + "<td class='th'>" + price + "</td>" + "</tr>");
+                }
+                fs.writeFileSync(path.join(__dirname,"../hotel/public/costchanges.html"), $.html());
+                app.use(express.static(staticpath3))
+                res.sendFile(path.join(__dirname,"../hotel/public/costchanges.html"))
+            })
+    })
+    .catch(err=>{
+        console.log(err)
+    })
 
 })
+
+

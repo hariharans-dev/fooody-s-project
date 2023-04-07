@@ -1,5 +1,4 @@
 .t{
-	font-family: 'Satisfy', cursive;
 	font-size: xx-large;
 }
 body{
@@ -15,37 +14,34 @@ body{
 .back{
 	background-color: #f1f1ed;
 }
-td {
-	padding-left: 5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-right: 15px;
+#table{
+	border: 2px solid;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.th{
+	text-align: center;
+	padding: 10px;
+	border: 2px solid gray;
 }
 .b1:hover {
 	transform: scale(1.2);
 	transition: transform .5s ease;
 	background-color: #8f8f8e;
-  }
-  .t{
+}
+.t{
 	color: brown;
-  }
-  .border{
+}
+.border{
 	margin-left: auto;
 	margin-right: auto;
-  }
-.left{
-	animation: slideIn 3s ease;
 }
-.right{
-	animation: slideOut 3s ease;
+.tb{
+	padding-bottom: 20px;
 }
-.username,.loginmenu{
-  padding-top: 45px;
-}
-.username{
-  padding-top: 52px;
-  margin-right: 10px;
-}
-.details{
-  vertical-align: middle;
+
+td{
+	padding-right: 10px;
+	padding-top: 10px;
 }
