@@ -16,46 +16,49 @@
 
 
 .button-box {
-    width: 220px;
+    width: 150px;
+    padding-left: 60px;
     margin: 35px auto;
     position: relative;
-    box-shadow: 0 0 20px 9px #ff61241f;
+    box-shadow: 0 0 20px 9px #0f04001f;
     border-radius: 30px;
-
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.togle-btn {
-    padding: 10px 30px;
-    cursor: pointer;
-    background: transparent;
+.toggle-btn {
+    padding: 30px 30px;
+    /* cursor: pointer; */
+    /* background: transparent; */
     border: 0;
-    outline: none;
+    /* outline: none; */
     position: relative;
-}
-
-#btn {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 110px;
-    height: 100%;
-    background: linear-gradient(to right, #E7B10A, #ffad06);
-    border-radius: 30px;
-    transition: .5s;
-}
-
-.social-icons {
-    margin: 30px auto;
     text-align: center;
 }
 
-.social-icons img {
+#btn {
+    /* top: 0; */
+    /* left: 0; */
+    position: absolute;
+    /* width: 110px; */
+    /* height: 100%; */
+    background: linear-gradient(to right, #E7B10A, #ffad06);
+    border-radius: 30px;
+    /* transition: .5s; */
+}
+
+/* .social-icons {
+    margin: 30px auto;
+    text-align: center;
+} */
+
+/* .social-icons img {
     width: 30px;
     box-shadow: 0 0 20px 0 #7f7f7f3d;
     cursor: pointer;
     border-radius: 50%;
     margin: 0 12px;
-}
+} */
 
 .input-group {
     margin-top: 20px;
@@ -110,11 +113,11 @@
     color: red;
 }
 
-#register {
+/* #register {
     position: absolute;
     left: 450px;
     bottom: 32px;
-}
+} */
 
 .input-group {
     position: absolute;
@@ -139,4 +142,3 @@
     width: 100px;
     height: 100px;
 }
-  

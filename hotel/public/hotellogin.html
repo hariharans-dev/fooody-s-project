@@ -3,19 +3,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodys login/signup</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/hotelloginstyle.css">
     <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://apis.google.com/js/platform.js"></script>
     <script src="/backend/"></script>
 </head>
-<body style="background-image: url(resources/pexels-ella-olsson-1640772.jpg);background-repeat: no-repeat; background-position: center; background-size: cover;">
+<body style="background-image: url(resources/Screenshot\ 2023-04-07\ 154430.png); background-repeat: no-repeat; background-position: center; background-size: cover;">
 <div class="form-box">
-    <img src="resources/transparent logo.png" alt="" id="logo" style="position: absolute; top: 0; left: 0;">
     <div class="button-box">
         <div id="btn"></div>
-        <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-        <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        <h1 class="togle-btn text-center">Hotel Login</h1>
     </div>
     <div class="social-icons">
         <img src="resources/fb.png" alt="">
@@ -23,25 +21,17 @@
         <img src="resources/gp.png" alt="">
     </div>
 
-    <form id="login" class="input-group" method="GET" action="http://localhost:8000/loginform">
+    <form id="login" class="input-group" method="GET" action="http://localhost:8080/hotellogin">
         <input type="text" class="input-field" name="user" placeholder="User Id" required="">
         <input type="text" class="input-field" name="password" placeholder="Password" required="">
         <input name="remember" type="checkbox" class="check-box"><label class="label" for="remember">Remember
         Password</label>
         <button class="submit-btn">Log In</button>
-        <p id="replace">Invalid Password!</p>
-    </form>
-    <form id="register" class="input-group" action="http://localhost:8000/signup">
-        <input type="text" class="input-field" name="user" placeholder="User Id" required="">
-        <input type="email" class="input-field" name="email" placeholder="Email" required="">
-        <input type="password" class="input-field" name="password" placeholder="Enter Password" required="">
-        <input type="checkbox" class="check-box"><label class="label" for="remember">I agree to the terms &amp;
-        conditions</label>
-        <button type="submit" class="submit-btn">Register</button>
+        <p id="replace"></p>
     </form>
 
 </div>
-<script>
+<!-- <script>
     var x = document.getElementById("login");
     var y = document.getElementById("register");
     var z = document.getElementById("btn");
@@ -57,7 +47,7 @@
         y.style.left = "450px";
         z.style.left = "0";
     }
-</script>
+</script> -->
 <footer style="background-color: white; padding: 10px; text-align: center; font-size: 14px; color: #555;">
     © 2023 Foodys. All rights reserved.
 </footer>

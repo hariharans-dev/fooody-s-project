@@ -7,6 +7,7 @@ const app=express()
 
 
 
+
 var userSchema=new mongoose.Schema({
     username:{type:String, required:true, unique:true},
     email:{type:String},
@@ -23,12 +24,12 @@ db.once('open',()=>{
 })
 
 
-
 var customer
-var previous
-var price
+var prices
+var menu=1
 
 var menuschema=new mongoose.Schema({
+    hotel:{type:String},
     parotta: {type:Number},
     dosa: {type:Number},
     tandoori: {type:Number},
@@ -38,12 +39,12 @@ var menuschema=new mongoose.Schema({
 
 var itemuser= mongoose.model("itemuser",menuschema)
 
-itemuser.findOne({},{_id:0,__v:0})
+itemuser.findOne({},{_id:0,__v:0,hotel: 0})
 .then((result)=>{
     function fn(){
         var jsonstring=JSON.stringify(result)
         var jsobj=JSON.parse(jsonstring)
-        global.price = Object.values(jsobj)
+        prices = Object.values(jsobj)
     }
     fn()
 })
@@ -52,7 +53,6 @@ itemuser.findOne({},{_id:0,__v:0})
 })
 
 
-console.log(global.price)
 
 
 app.listen(8000,(req,res)=>{
@@ -148,8 +148,15 @@ app.get('/loginform',(req,res)=>{
             const $ = cheerio.load(html)
             $('#replace').text('Welcome '+customer)
             $('#passres').text('')
+
+            $('#parottaprice').text('Rs. {{'+prices[0]+'*paro}}')
+            $('#dosaprice').text('Rs. {{'+prices[1]+'*dos}}')
+            $('#tandooriprice').text('Rs. {{'+prices[2]+'*tand}}')
+            $('#pastaprice').text('Rs. {{'+prices[3]+'*past}}')
+            $('#pannerprice').text('Rs. {{'+prices[4]+'*pann}}')
             fs.writeFileSync(path.join(__dirname,"../menu/public/menu.html"), $.html());
 
+            menu=1
             res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
         }
         else if(found===1){
@@ -187,6 +194,7 @@ app.get('/loginform',(req,res)=>{
 app.get('/menu',(req,res)=>{
 
     console.log('view page')
+    menu=0
 
     const html = fs.readFileSync(path.join(__dirname,"../viewcart/public/cart.html"), 'utf-8')
     const $ = cheerio.load(html)
@@ -223,39 +231,6 @@ app.get('/menu',(req,res)=>{
             }
         }
         $("#table").append("<tr><td colspan='4' class='total text-center'>Total: "+tot+".00</td></tr>")
-
-        var userSchema=new mongoose.Schema({
-            username:{type:String, required:true},
-            parotta:{type:Number},
-            dosa:{type:Number},
-            tandoori:{type:Number},
-            panner:{type:Number},
-            pasta:{type:Number}
-        },{collection:'previousorders'})
-
-        var prev=mongoose.model("prev",userSchema)
-
-        prev.find({username:customer})
-            .then((result)=>{
-                previous=result
-            })
-
-        prev.create({
-            username: customer,
-            parotta: count[0],
-            dosa: count[1],
-            tandoori: count[2],
-            pasta: count[3],
-            panner: count[4],
-        })
-            .then(()=>{
-                console.log('previous data stored')
-            })
-            .catch(err=>{
-                console.log('error in adding data in perivous orders')
-            })
-
-        console.log(previous)
     }
     else {
         console.log('it is empty')
