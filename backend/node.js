@@ -5,6 +5,8 @@ const cheerio = require('cheerio')
 const path = require('path')
 const app=express()
 
+
+
 var userSchema=new mongoose.Schema({
     username:{type:String, required:true, unique:true},
     email:{type:String},
@@ -21,9 +23,42 @@ db.once('open',()=>{
 })
 
 
+
+var customer
+var previous
+var price
+
+var menuschema=new mongoose.Schema({
+    parotta: {type:Number},
+    dosa: {type:Number},
+    tandoori: {type:Number},
+    pasta: {type:Number},
+    panner: {type:Number}
+},{collection:'costoffoods'})
+
+var itemuser= mongoose.model("itemuser",menuschema)
+
+itemuser.findOne({},{_id:0,__v:0})
+.then((result)=>{
+    function fn(){
+        var jsonstring=JSON.stringify(result)
+        var jsobj=JSON.parse(jsonstring)
+        global.price = Object.values(jsobj)
+    }
+    fn()
+})
+.catch(err=>{
+    console.log('error in getting the costs of items')
+})
+
+
+console.log(global.price)
+
+
 app.listen(8000,(req,res)=>{
     console.log('server is up')
 })
+
 
 
 app.get('/',(req,res)=>{
@@ -38,6 +73,7 @@ app.get('/',(req,res)=>{
     app.use(express.static(staticpath1))
     res.sendFile(path.join(__dirname,"../loginpage/public/login.html"))
 })
+
 
 
 app.get('/signup',(req,res)=>{
@@ -62,7 +98,6 @@ app.get('/signup',(req,res)=>{
         fs.writeFileSync(path.join(__dirname,"../loginpage/public/login.html"), $.html());
 
         res.sendFile(path.join(__dirname,"../loginpage/public/login.html"))
-
     })
     .catch(err=>{
         console.log('data not created')
@@ -80,7 +115,6 @@ app.get('/signup',(req,res)=>{
 
 })
 
-var customer
 
 
 app.get('/loginform',(req,res)=>{
@@ -88,8 +122,9 @@ app.get('/loginform',(req,res)=>{
     const username=req.query['user']
     const password=req.query['password']
 
+    console.log(Object.values(req.query))
+
     var found=0
-    customer=username
     var index
 
     user.find({},{_id:0,username:1,password:1})
@@ -103,6 +138,7 @@ app.get('/loginform',(req,res)=>{
         }
 
         if((found===1)&&(password===result[index]['password'])){
+            customer=username
             console.log('can login')
 
             const staticpath3 = path.join(__dirname,"../menu/public")
@@ -111,6 +147,7 @@ app.get('/loginform',(req,res)=>{
             const html = fs.readFileSync(path.join(__dirname,"../menu/public/menu.html"), 'utf-8')
             const $ = cheerio.load(html)
             $('#replace').text('Welcome '+customer)
+            $('#passres').text('')
             fs.writeFileSync(path.join(__dirname,"../menu/public/menu.html"), $.html());
 
             res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
@@ -145,53 +182,86 @@ app.get('/loginform',(req,res)=>{
     .catch(err=>{console.log('error in finding')})
 })
 
-let obj
+
 
 app.get('/menu',(req,res)=>{
 
-    console.log('menu page')
+    console.log('view page')
 
     const html = fs.readFileSync(path.join(__dirname,"../viewcart/public/cart.html"), 'utf-8')
     const $ = cheerio.load(html)
 
-    const pdata=req.query
+    var pdata=req.query
 
-    const count=Object.values(pdata)
+    var count=Object.values(pdata)
 
     let Empty=1;
     for (let index = 0; index < count.length; index++) {
-        if (count[index] != '0') {
+        if (count[index] !== '0') {
             Empty = 0;
             break;
         }
     }
 
     $('#table').text('')
+    $('#main-area').text('')
 
-    if (Empty != 1) {
+    if (Empty !== 1) {
+        console.log('it is not empty')
         var tot = 0
-        const items=Object.keys(pdata)
-        const prices=[50,70,350,200,280]
-        const imageslinks=['resources/parotta.png','resources/dosa.png','resources/tandoori.png','resources/pasta.png','resources/panner.png']
-        $("#table").append("<tr><th>Item</th><th>Price</th><th>Quantity</th><th>Rate</th></tr>")
+        var items=Object.keys(pdata)
+        var imageslinks=['resources/parotta.png','resources/dosa.png','resources/tandoori.png','resources/pasta.png','resources/panner.png']
+        $("#table").append("<tr><th class='th'>Item</th><th class='th'>Price</th><th class='th'>Quantity</th><th class='th'>Rate</th></tr>")
         for (let index = 0; index < count.length; index++) {
-            if (count[index] != '0') {
-                // var img = "<img src='backend/resources/arvind.png'>";
-                // console.log(img)
+            if (count[index] !== '0') {
+                var img = "<img class='item-image img-circle' src=" + imageslinks[index] + ">";
                 var price = "<p>" + prices[index] + "</p>";
                 var quantity = "<p>" + count[index] + "</p>";
                 var rate = "<p>" + prices[index] * count[index] + "</p>";
                 tot = tot + (prices[index] * count[index]);
-                $("#table").append("<tr><td class='item'>" + "<p class='name'>" + items[index].toUpperCase() + "</p>" + "</td>" + "<td>" + price + "</td>" + "<td>" + quantity + "</td>" + "<td>" + rate + "</td>" + "</tr>");
+                $("#table").append("<tr><td class='item th'>" +img+ "<p class='name'>" + items[index].toUpperCase() + "</p>" + "</td>" + "<td class='th'>" + price + "</td>" + "<td class='th'>" + quantity + "</td>" + "<td class='th'>" + rate + "</td>" + "</tr>");
             }
         }
-        $("#table").append("<tr><td colspan='4' class='total'>Total: "+tot+".00</td></tr>")
+        $("#table").append("<tr><td colspan='4' class='total text-center'>Total: "+tot+".00</td></tr>")
+
+        var userSchema=new mongoose.Schema({
+            username:{type:String, required:true},
+            parotta:{type:Number},
+            dosa:{type:Number},
+            tandoori:{type:Number},
+            panner:{type:Number},
+            pasta:{type:Number}
+        },{collection:'previousorders'})
+
+        var prev=mongoose.model("prev",userSchema)
+
+        prev.find({username:customer})
+            .then((result)=>{
+                previous=result
+            })
+
+        prev.create({
+            username: customer,
+            parotta: count[0],
+            dosa: count[1],
+            tandoori: count[2],
+            pasta: count[3],
+            panner: count[4],
+        })
+            .then(()=>{
+                console.log('previous data stored')
+            })
+            .catch(err=>{
+                console.log('error in adding data in perivous orders')
+            })
+
+        console.log(previous)
     }
     else {
-        $("#table").hide();
-        $("#main-area").append("<img src='/resources/emptycart.png' class='empty-cart'>");
+        console.log('it is empty')
+        $("#main-area").append("<img src='resources/emptycart.png' class='empty-cart'>")
         $("#main-area").append("<p class='ecart-p'>Your Cart Is Empty 😞  </p>")
-        $(".ecart-p").append("<a href='/menu selection/menu.html'><button class='glow-on-hover' type='button'>Menu</button></a>");
+        $(".ecart-p").append("<a href='/menu selection/menu.html'><button class='glow-on-hover' type='button'>Menu</button></a>")
     }
 
     const staticpath1 = path.join(__dirname,"../viewcart/public")
@@ -199,33 +269,9 @@ app.get('/menu',(req,res)=>{
 
     fs.writeFileSync(path.join(__dirname,"../viewcart/public/cart.html"),$.html());
     res.sendFile(path.join(__dirname,"../viewcart/public/cart.html"))
-
-    var userSchema=new mongoose.Schema({
-        username:{type:String, required:true, unique:true},
-        parotta:{type:Number},
-        dosa:{type:Number},
-        tandoori:{type:Number},
-        panner:{type:Number},
-        pasta:{type:Number}
-    },{collection:'previousorders'})
-    
-    var prev=mongoose.model("prev",userSchema)
-
-    prev.create({
-        username: customer,
-        parotta: count[0],
-        dosa: count[1],
-        tandoori: count[2],
-        pasta: count[3],
-        panner: count[4],
-    })
-    .then(()=>{
-        console.log('previous data stored')
-    })
-    .catch(err=>{
-        console.log('error in adding data in perivous orders')
-    })
 })
+
+
 
 app.get('/signout',(req,res)=>{
     const html = fs.readFileSync(path.join(__dirname,"../loginpage/public/login.html"), 'utf-8')
@@ -240,14 +286,45 @@ app.get('/signout',(req,res)=>{
     res.sendFile(path.join(__dirname,"../loginpage/public/login.html"))
 })
 
+
+
 app.get('/updatepass',(req,res)=>{
 
     const oldpass=req.query['oldpass']
     const newpass=req.query['newpass']
 
-    
+    user.findOne({username: customer})
+        .then((result)=>{
+            if(oldpass==result['password']) {
+                user.updateOne({username: customer}, {$set: {password: newpass}})
+                    .then((result) => {
+                        console.log('password is updated')
+                        const staticpath5 = path.join(__dirname, "../menu/public")
+                        app.use(express.static(staticpath5))
 
-    const staticpath2 = path.join(__dirname,"../menu/public")
-    res.sendFile(path.join(__dirname,"../menu/public/menu.html"))
+                        const html = fs.readFileSync(path.join(__dirname, "../menu/public/menu.html"), 'utf-8')
+                        const $ = cheerio.load(html)
+                        $('#passres').text('Password is updated!')
+                        fs.writeFileSync(path.join(__dirname, "../menu/public/menu.html"), $.html());
+
+                        res.sendFile(path.join(__dirname, "../menu/public/menu.html"))
+                    })
+                    .catch(err => {
+                        console.log('error in updating the password')
+                    })
+            }
+            else{
+                const staticpath5 = path.join(__dirname, "../menu/public")
+                app.use(express.static(staticpath5))
+
+                const html = fs.readFileSync(path.join(__dirname, "../menu/public/menu.html"), 'utf-8')
+                const $ = cheerio.load(html)
+                $('#passres').text('Old password is invalid!')
+                fs.writeFileSync(path.join(__dirname, "../menu/public/menu.html"), $.html());
+
+                res.sendFile(path.join(__dirname, "../menu/public/menu.html"))
+            }
+        })
 })
+
 

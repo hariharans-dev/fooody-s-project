@@ -83,7 +83,7 @@ td{
 }
 .popbox,.password{
   position: fixed;
-  top: 12%;
+  top: 13%;
   right: 1%;
   background-color: #eae6daeb;
   padding-top: 20px;
@@ -94,4 +94,16 @@ td{
 }
 .it{
   padding-right: 30px;
+}
+
+.r{
+  padding-right: 20px;
+}
+
+.right{
+  margin-right: 30px;
+}
+
+.prev{
+  background-color: #E7B10A;
 }

@@ -17,6 +17,11 @@
       <div class="t b2"><img src="resources/transparent logo.png" alt="photo" width="150px" height="150px">Fooody's</div>
       <div class="d-flex">
         <div id="replace" class="h5 mt-3 text-right username">Welcome Hariharan S</div>
+        <div class="loginmenu r b3">
+          <form action="http://localhost:8000/previousorder" method="get">
+            <button class="submit-btn prev"><img id="menutab" src="resources/menuimg.png" alt="menuimage" height="50px"></button>
+          </form>
+        </div>
         <div class="text-white text-right b3 rounded loginmenu"><img id="userimg" src="/resources/usrimg.png" alt="user" width="50px"></div>
         <div id="popdrop" class="popbox">
           <form action="http://localhost:8000/signout" method="get">
@@ -29,15 +34,18 @@
         <form action="http://localhost:8000/updatepass" method="get">
         <table>
           <tbody><tr>
-            <td><label for="old">Old password</label></td>
+            <td><label>Old password</label></td>
             <td><input type="text" name="oldpass"></td>
           </tr>
           <tr>
-            <td><label for="new">New password</label></td>
+            <td><label>New password</label></td>
             <td><input type="text" name="newpass"></td>
           </tr>
           <tr>
             <td colspan="2"><button class="submit-btn">submit</button></td>
+          </tr>
+          <tr>
+            <td colspan="2"><p id="passres"></p></td>
           </tr>
         </tbody></table>
         </form>
@@ -210,6 +218,44 @@
     </div>
   </div>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="../src/menujs.js"></script>
+  <script>
+    $(document).ready(function(){
+  $('#popdrop').hide()
+  $('#pass').hide()
+  $('#cen').hide()
+})
+$('#userimg').click(function(){
+    $('#popdrop').show()
+})
+
+$('#menutab').mouseenter(()=>{
+  $('#cen').show()
+})
+
+$('#menutab').mouseleave(()=>{
+  $('#cen').hide()
+})
+
+$('#userimg').mouseleave(function(){
+  $('#popdrop').mouseleave(function(){
+    $('#popdrop').hide()
+  })
+})
+
+$('#sout').click(function(){
+  $('#pass').show()
+  $('#popdrop').hide()
+})
+
+$('#pass').mouseenter(function(){
+  $('#pass').mouseleave(function(){
+    $('#pass').hide()
+  })})
+  </script>
+
+
+
+
+
 
 </body></html>

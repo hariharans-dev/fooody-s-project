@@ -116,16 +116,16 @@ body{
     animation: slideIn 1s ease;
 }
 
-table{
+#table{
     border: 2px solid grey;
     font-family: 'Tilt Warp', cursive;
     padding: 100px;
     margin-left: auto;
     margin-right: auto;
-    
+    margin-top: 30px;
 }
 
-th,td{
+.th{
     text-align: center;
     padding: 20px;
     border: 2px solid #898121;
@@ -158,4 +158,29 @@ th,td{
     padding: 25px;
     color: #4C4B16;
     text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+.popbox,.password{
+    position: fixed;
+    top: 13%;
+    right: 1%;
+    background-color: #eae6daeb;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border: 1px solid;
+}
+.it{
+    padding-right: 30px;
+}
+
+.total{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
