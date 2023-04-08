@@ -94,3 +94,38 @@ h1{
   border-radius: 5px;
   width: 180px;
 }
+
+button:hover {
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+button:hover {
+  background-color: white;
+  color: #cb202d;
+}
+
+.food-items {
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.food-items:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
