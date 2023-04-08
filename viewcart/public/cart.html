@@ -12,50 +12,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&amp;family=Tilt+Warp&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>Fooody's</title>
-  </head>
+</head>
 
-  <body>
-    <div class="navbar p-2 py-0" id="nvbar1">
-      <div>
-        <img src="resources/org logo.png" alt="logo" height="100px" style="border-radius: 50%"><span>Checkout</span>
-      </div>
-      <div class="loginmenu r b3 me-3">
-        <form action="http://localhost:8000/previousorder" method="get">
-          <input type="image" src="resources/img2.png" height="60px" alt="Submit">
-        </form>
-      </div>
+<body>
+    <div class="navbar p-2" id="nvbar1">
+        <div><img src="resources/transparent logo.png" alt="logo" height="100px"><span class="head">Secure Checkout</span></div>
+        <div class="loginmenu r b3">
+            <form action="http://localhost:8000/previousorder" method="get">
+              <button class="submit-btn prev"><img id="menutab" src="resources/img.png" alt="menuimage" height="50px"></button>
+            </form>
+        </div>
     </div>
-    <div id="order-det">
-      <!--      <h1 id="title" style="display: block;">Order Details</h1>-->
-
-      <table id="table"><tr><th>S.no</th><th>Item</th><th>Rate</th><th>Quantity</th><th>Price</th></tr><tr><td>1.</td><td class="item th"><img class="item-image img-circle" src="resources/dosa.png"></td><td><p class="name">DOSA</p><p>₹ 40</p></td><td class="th"><p></p><p>1</p><p></p></td><td class="th"><p></p><p>40</p><p></p></td></tr><tr><td colspan="5" class="total text-end">Total: 40.00</td></tr></table>
-    </div>
+    <table id="table"><tr><th class="th">Item</th><th class="th">Price</th><th class="th">Quantity</th><th class="th">Rate</th></tr><tr><td class="item th"><img class="item-image img-circle" src="resources/parotta.png"><p class="name">PAROTTA</p></td><td class="th"><p>40</p></td><td class="th"><p>3</p></td><td class="th"><p>120</p></td></tr><tr><td class="item th"><img class="item-image img-circle" src="resources/pasta.png"><p class="name">PASTA</p></td><td class="th"><p>200</p></td><td class="th"><p>4</p></td><td class="th"><p>800</p></td></tr><tr><td colspan="4" class="total text-center">Total: 920.00</td></tr></table>
     <div id="main-area"></div>
     <script>
-      $(document).ready(function () {
-        $("#popdrop").hide();
-        $("#pass").hide();
-      });
-      $("#userimg").click(function () {
-        $("#popdrop").show();
-      });
-      $("#userimg").mouseleave(function () {
-        $("#popdrop").mouseleave(function () {
-          $("#popdrop").hide();
-        });
-      });
+        $(document).ready(function(){
+            $('#popdrop').hide()
+            $('#pass').hide()
+        })
+        $('#userimg').click(function(){
+            $('#popdrop').show()
+        })
+        $('#userimg').mouseleave(function(){
+            $('#popdrop').mouseleave(function(){
+                $('#popdrop').hide()
+            })
+        })
 
-      $("#sout").click(function () {
-        $("#pass").show();
-        $("#popdrop").hide();
-      });
+        $('#sout').click(function(){
+            $('#pass').show()
+            $('#popdrop').hide()
+        })
 
-      $("#pass").mouseenter(function () {
-        $("#pass").mouseleave(function () {
-          $("#pass").hide();
-        });
-      });
+        $('#pass').mouseenter(function(){
+            $('#pass').mouseleave(function(){
+                $('#pass').hide()
+            })})
     </script>
-  
 
 </body></html>
