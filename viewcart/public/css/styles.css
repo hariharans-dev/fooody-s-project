@@ -1,186 +1,227 @@
 .nvbar1 {
-    height: 0.5%;
+  height: 50px;
+
 }
 
 span {
-    font-family: 'Poppins', sans-serif;
-    font-size: xx-large;
-    font-weight: bolder;
+  padding: 20px;
+  font-family: "Tilt Warp", cursive;
+  font-size: xx-large;
+  font-weight: bolder;
 }
 
 .usr:hover {
-    transform: scale(1.05);
-    transition: transform .3s;
-    background-color: #898121;
+  transform: scale(1.05);
+  transition: transform 0.3s;
+  background-color: #898121;
 }
 
-body{
-    background-color: #F7F1E5;
+html,body {
+  /*background-color: #D4D925;*/
+  height: 100%;
 }
 
-#nvbar1{
-    background-color: #E7B10A;
+body {
+  /*background-image:url("https://img.freepik.com/premium-vector/square-frame-with-delicious-fast-food-menu-template_18591-71140.jpg") ;*/
+  background-image: url("https://www.svapinfotech.com/data/media/orginal/food-delivery-2-5459.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding-bottom: 20px;
+  /*position: sticky;*/
+  /*margin: 0;*/
+  color: #FFEE63;
+}
+
+#nvbar1 {
+  /*background-color: #FF5B00;*/
+  /*background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5));*/
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 0;
 }
 
 @keyframes slideIn {
-    0% {
-        transform: translateY(100%);
-    }
+  0% {
+    transform: translateY(100%);
+  }
 
-    100% {
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #F7F1E5;
-    background: #4C4B16;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #f7f1e5;
+  background: #4c4b16;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
 
 .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #898121);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+  content: "";
+  background: linear-gradient(45deg, #898121);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
 .glow-on-hover:active {
-    color: #E7B10A
+  color: #e7b10a;
 }
 
 .glow-on-hover:active:after {
-    background: transparent;
+  background: transparent;
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
-
 
 @keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
 
-    50% {
-        background-position: 400% 0;
-    }
+  50% {
+    background-position: 400% 0;
+  }
 
-    100% {
-        background-position: 0 0;
-    }
+  100% {
+    background-position: 0 0;
+  }
 }
 
-.item-image{
-    height: 100px;
-    width: 150px;
-    /* display: block; */
+.item-image {
+  /*border: 3px solid transparent;*/
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: inline;
+  /*border-image: url("viewcart/public/resources/frame-5437997_1280.png") round;*/
+  /* display: block; */
 }
 
-#main-area{
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
+#main-area {
+  width: 80%;
+  margin: 50px auto;
+  animation: slideIn 1s ease;
+}
+
+#table {
+  font-family: "Tilt Warp", cursive;
+  padding: 100px;
+  margin: 30px auto 30px 10%;
+}
+
+.th {
+  text-align: center;
+  padding: 20px;
+  /*border: 2px solid #898121;*/
+}
+
+th{
+  text-align: center;
+  border-bottom: 2px solid #e7b10a;
+  padding: 20px;
+}
+.item {
+  text-align: left;
+}
+
+#title{
+    font-family: "Tilt Warp", cursive;
+    margin-left: 100px;
     margin-top: 50px;
-    margin-bottom: 50px;
-    animation: slideIn 1s ease;
+}
+.name {
+  /*padding: 10px;*/
+  /*margin-top: 25px;*/
+  text-align: left;
+}
+
+.total {
+  text-align: right;
+}
+
+.empty-cart {
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.ecart-p {
+  font-family: "Tilt Warp", cursive;
+  font-size: xx-large;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  color: #4c4b16;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  padding: 20px;
+}
+
+.popbox,
+.password {
+  position: fixed;
+  top: 13%;
+  right: 1%;
+  background-color: #eae6daeb;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  border: 1px solid;
+}
+.it {
+  padding-right: 30px;
+}
+
+.total {
+  /*border: 2px solid #e7b10a;*/
+  text-align: right;  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #table{
-    border: 2px solid grey;
-    font-family: 'Tilt Warp', cursive;
-    padding: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
-}
-
-.th{
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #898121;
-}
-
-.item{
-    text-align: left;
-}
-
-.name{
-    padding: 5px;
-}
-
-.total{
-    text-align: right;
-}
-
-.empty-cart{
-    height: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.ecart-p{
-    font-family: 'Tilt Warp', cursive;
-    font-size: xx-large;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 25px;
-    color: #4C4B16;
-    text-align: center;
+  /*border: 2px solid #e7b10a;*/
+  margin-bottom: 100px;
 }
 
 td{
-    text-align: center;
-}
-
-.popbox,.password{
-    position: fixed;
-    top: 13%;
-    right: 1%;
-    background-color: #eae6daeb;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    border: 1px solid;
-}
-.it{
-    padding-right: 30px;
-}
-
-.total{
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  border-bottom:2px solid #e7b10a;
+  padding: 50px;
 }
