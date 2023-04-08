@@ -193,19 +193,20 @@ button {
 button::before,
 button::after {
   content: "Add to Cart";
+  color: #f3f3f3;
   position: absolute;
   top: 50;
   right: 100%;
   width: 100%;
   height: 100%;
-  background: #3f51b5;
+  background: #f18b06;
   transition: transform 0.3s ease;
 }
 
 button::after {
   right: auto;
   left: 100%;
-  background: #2196f3;
+  background: #deb306;
 }
 
 button:hover::before {
