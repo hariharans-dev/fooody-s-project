@@ -4,17 +4,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="NEWMENUSTYLE.css">
+  <link rel="stylesheet" href="css/NEWMENUSTYLE.css">
   <title>Menu</title>
 </head>
 <body>
+  <form action="http://localhost:8000/menu">
   <div class="menu">
     <div class="heading">
       <h1>FOODYS</h1>
       <h3>&mdash; MENU &mdash;</h3>
     </div>
     <div class="food-items">
-      <img src="dosa.png" alt="dosa">
+      <img src="resources/dosa.png" alt="dosa">
       <div class="details">
         <div class="details-sub">
           <h5>Dosa</h5>
@@ -25,7 +26,7 @@
       </div>
     </div>
     <div class="food-items">
-      <img src="panner.png" alt="dosa">
+      <img src="resources/panner.png" alt="dosa">
       <div class="details">
         <div class="details-sub">
           <h5>Paneer</h5>
@@ -36,7 +37,7 @@
       </div>
     </div>
     <div class="food-items">
-      <img src="parotta.png" alt="dosa">
+      <img src="resources/parotta.png" alt="dosa">
       <div class="details">
         <div class="details-sub">
           <h5>Parotta</h5>
@@ -47,7 +48,7 @@
       </div>
     </div>
     <div class="food-items">
-      <img src="pasta.png" alt="dosa">
+      <img src="resources/pasta.png" alt="dosa">
       <div class="details">
         <div class="details-sub">
           <h5>Pasta</h5>
@@ -59,19 +60,43 @@
     </div>
 
     <div class="food-items">
-      <img src="tandoori.png" alt="dosa">
+      <img src="resources/tandoori.png" alt="dosa">
       <div class="details">
         <div class="details-sub">
           <h5>Tandoori</h5>
           <h5 class="price">Rs 200</h5>
         </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas ducimus maiores ex magni unde, possimus at pariatur quisquam nam, exercitationem ipsam? Repudiandae perspiciatis corporis ratione deserunt, asperiores non nemo?</p>
-        <button>Add to Cart</button>
+        <button name="">Add to Cart</button>
       </div>
     </div>
 
     <div class="food-items">
-      <img src="parotta.png" alt="dosa">
+      <img src="resources/tandoori.png" alt="dosa">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Tandoori</h5>
+          <h5 class="price">Rs 200</h5>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas ducimus maiores ex magni unde, possimus at pariatur quisquam nam, exercitationem ipsam? Repudiandae perspiciatis corporis ratione deserunt, asperiores non nemo?</p>
+        <button name="">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="food-items">
+      <img src="resources/tandoori.png" alt="dosa">
+      <div class="details">
+        <div class="details-sub">
+          <h5>Tandoori</h5>
+          <h5 class="price">Rs 200</h5>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas ducimus maiores ex magni unde, possimus at pariatur quisquam nam, exercitationem ipsam? Repudiandae perspiciatis corporis ratione deserunt, asperiores non nemo?</p>
+        <button name="">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="food-items">
+      <img src="resources/parotta.png" alt="dosa">
       <div class="details">
         <div class="details-sub">
           <h5>Parotta</h5>
@@ -81,5 +106,9 @@
         <button>Add to Cart</button>
       </div>
   </div>
+  <div>
+    <input type="submit" id="sbn">
+  </div>
+</form>
 </body>
 </html>

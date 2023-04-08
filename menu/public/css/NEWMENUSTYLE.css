@@ -162,7 +162,6 @@ button:hover {
   }
 }
 
-/* Slide in the food items */
 .food-items {
   animation: slide-in 0.5s;
 }

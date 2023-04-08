@@ -237,47 +237,6 @@ app.get('/menu',(req,res)=>{
         $(".ecart-p").append("<a href='/menu selection/menu.html'><button class='glow-on-hover' type='button'>Menu</button></a>")
     }
 
-    $('#prevdata').text('')
-
-    var menuschema12=new mongoose.Schema({
-        username:{type:String},
-        parotta:{type:Number},
-        dosa:{type:Number},
-        tandoori:{type:Number},
-        pasta:{type:Number},
-        panner:{type:Number}
-    },{collection:'previousorders'})
-
-    var finding=mongoose.model("finding",menuschema12)
-
-    finding.find({username:customer},{_id:0,__v:0})
-        .then((result)=>{
-            console.log(result)
-        })
-        .catch(err=>{
-            console.log('error in finding the previous data')
-        })
-
-
-    var prevmodel=mongoose.model("prevmodel",menuschema12)
-
-
-
-    prevmodel.insertMany({
-        username:customer,
-        parotta:count[0],
-        dosa:count[1],
-        tandoori:count[2],
-        pasta:count[3],
-        panner:count[4]
-    })
-        .then(()=>{
-            console.log('previous data stored')
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-
 
     const staticpath1 = path.join(__dirname,"../viewcart/public")
     app.use(express.static(staticpath1))
