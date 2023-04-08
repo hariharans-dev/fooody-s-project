@@ -6,6 +6,8 @@ const path = require('path')
 const app=express()
 
 
+
+
 var userSchema=new mongoose.Schema({
     username:{type:String, required:true, unique:true},
     email:{type:String},
@@ -236,7 +238,6 @@ app.get('/menu',(req,res)=>{
         $("#main-area").append("<p class='ecart-p'>Your Cart Is Empty 😞  </p>")
         $(".ecart-p").append("<a href='/menu selection/menu.html'><button class='glow-on-hover' type='button'>Menu</button></a>")
     }
-
 
     const staticpath1 = path.join(__dirname,"../viewcart/public")
     app.use(express.static(staticpath1))

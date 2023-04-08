@@ -140,6 +140,7 @@ app.get('/hotellogin',(req,res)=>{
         .catch(err=>{console.log('error in finding')})
 })
 
+
 app.get('/changes',(req,res)=>{
     var obj=req.query
     console.log(obj)
@@ -205,10 +206,9 @@ app.get('/changes',(req,res)=>{
                 res.sendFile(path.join(__dirname,"../hotel/public/costchanges.html"))
             })
     })
-                .catch(err=>{
+    .catch(err=>{
         console.log(err)
     })
-
 
 })
 
