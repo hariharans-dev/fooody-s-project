@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00571c0b-a7d6-40f1-b2b0-dcf45378f0c4" name="Changes" comment="Improved design of cart page" />
+    <list default="true" id="00571c0b-a7d6-40f1-b2b0-dcf45378f0c4" name="Changes" comment="Improved design of cart page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginpage/public/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginpage/public/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewcart/public/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewcart/public/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewcart/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/viewcart/public/css/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
@@ -84,6 +94,8 @@
       <workItem from="1680950986400" duration="3285000" />
       <workItem from="1680954341413" duration="3327000" />
       <workItem from="1680964237492" duration="11849000" />
+      <workItem from="1680977177355" duration="271000" />
+      <workItem from="1680978146014" duration="433000" />
     </task>
     <task id="LOCAL-00001" summary="removed previous data module">
       <created>1680957595818</created>
@@ -113,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680977122943</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Improved design of cart page">
+      <created>1680977346259</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680977346259</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Improved design of cart page">
+      <created>1680977416005</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680977416005</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

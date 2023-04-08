@@ -23,7 +23,7 @@ html,body {
 
 body {
   /*background-image:url("https://img.freepik.com/premium-vector/square-frame-with-delicious-fast-food-menu-template_18591-71140.jpg") ;*/
-  background-image: url("https://www.svapinfotech.com/data/media/orginal/food-delivery-2-5459.jpg");
+  background-image: url("../resources/food-delivery-2-5459.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
