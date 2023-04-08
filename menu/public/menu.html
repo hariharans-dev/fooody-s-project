@@ -27,13 +27,48 @@
     <div class="food-items">
       <img src="panner.png" alt="dosa">
       <div class="details">
-        <div class="details-sub">
+             <div class="details-sub">
           <h5>Paneer</h5>
           <h5 class="price">Rs 250</h5>
+
+        <div class="h3">Hotel Fortune park</div>
+        <div>This is a fine dining restuarant located in vellore<br>It is a five star restuarant</div>
+        <div class="text-left mt-2"><a href="https://goo.gl/maps/neLT2fwgvA7Lf2LP7" class="btn btn-dark b1" role="button" target="_blank">Location</a></div>
+      </div>
+      <div class=""><img src="resources/fortunepark.png" alt="fortunepark" width="400px" height="200px"></div>
+  </div>
+  <br>
+  <form action="http://localhost:8000/menu" method="GET">
+  <div class="back mt-0">
+    <div class="container-sm pt-5 pb-5">
+      <div class="parotta left a1 rounded">
+        <div class="d-flex justify-content-around">
+          <div class="mt-4"><img src="resources/parotta.png" alt="parotta" height="250px" width="250px"></div>
+          <div class="">
+            <div class="display-3 text-left mb-5">Parotta</div>
+            <div class="h4 text-left">Description</div>
+            <div class="">Bread made of wheat flour which is fluffy and slightly crispy </div>
+            <div class="mt-3 mb-3 text-left">
+              <table class="">
+                <tbody><tr>
+                  <td>Quantity </td>
+                  <td><input class="b2" name="parotta" type="number" id="parotta" ng-init="paro=0" ng-model="paro"></td>
+                </tr>
+                <tr>
+                  <td class="pt-2 pb-2 pr-2">Price</td>
+                  <td class="">
+                    <p id="parottaprice" class="pt-3">Rs. {{10*paro}}</p>
+                  </td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+
         </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas ducimus maiores ex magni unde, possimus at pariatur quisquam nam, exercitationem ipsam? Repudiandae perspiciatis corporis ratione deserunt, asperiores non nemo?</p>
         <button>Add to Cart</button>
       </div>
+
     </div>
     <div class="food-items">
       <img src="parotta.png" alt="dosa">
@@ -41,10 +76,36 @@
         <div class="details-sub">
           <h5>Parotta</h5>
           <h5 class="price">Rs 50</h5>
+
+      <br>
+      <div class="dosa right a1 rounded">
+        <div class="d-flex justify-content-around">
+          <div class="">
+            <div class="display-3 text-left mb-5">Dosa</div>
+            <div class="h4 text-left">Description</div>
+            <div class="">It is a cripy batter roasted to prefection served with sambar</div>
+            <div class="mt-3 mb-3">
+              <table class="ml-0">
+                <tbody><tr>
+                  <td>Quantity </td>
+                  <td><input name="dosa" class="b2" type="number" ng-init="dos=0" ng-model="dos" id="dosa"></td>
+                </tr>
+                <tr>
+                  <td class="pt-2 pb-2 pr-2">Price</td>
+                  <td>
+                    <p id="dosaprice" class="pt-3 text-left">Rs. {{30*dos}}</p>
+                  </td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+          <div class="pr-3"><img class="mt-4" src="resources/dosa.png" alt="dosa" height="250px" width="250px"></div>
+
         </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas ducimus maiores ex magni unde, possimus at pariatur quisquam nam, exercitationem ipsam? Repudiandae perspiciatis corporis ratione deserunt, asperiores non nemo?</p>
         <button>Add to Cart</button>
       </div>
+
     </div>
     <div class="food-items">
       <img src="pasta.png" alt="dosa">
@@ -52,6 +113,31 @@
         <div class="details-sub">
           <h5>Pasta</h5>
           <h5 class="price">Rs 260</h5>
+
+      <br>
+      <div class="tandoori left a1 rounded">
+        <div class="d-flex justify-content-around">
+          <div><img class="mt-4" src="resources/tandoori.png" alt="tandoori" height="250px" width="250px"></div>
+          <div class="text-center">
+            <div class="display-3 text-left mb-5">Tandoori</div>
+            <div class="h4 text-left">Description</div>
+            <div class="">Spicy chicken roasted in a tandoor oven with a smoky flavor</div>
+            <div class="mt-3 text-center">
+              <table class="ml-0">
+                <tbody><tr>
+                  <td>Quantity </td>
+                  <td><input name="tandoori" class="b2" type="number" ng-init="tand=0" ng-model="tand" id="tandoori"></td>
+                </tr>
+                <tr>
+                  <td class="">Price</td>
+                  <td>
+                    <p id="tandooriprice" class="pt-3 text-left">Rs. {{120*tand}}</p>
+                  </td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+
         </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas ducimus maiores ex magni unde, possimus at pariatur quisquam nam, exercitationem ipsam? Repudiandae perspiciatis corporis ratione deserunt, asperiores non nemo?</p>
         <button>Add to Cart</button>
@@ -64,10 +150,35 @@
         <div class="details-sub">
           <h5>Tandoori</h5>
           <h5 class="price">Rs 200</h5>
+      <br>
+      <div class="pasta a1 right rounded">
+        <div class="d-flex justify-content-around">
+          <div class="">
+            <div class="display-3 text-left mb-5">Pasta</div>
+            <div class="h4 text-left">Description</div>
+            <div class="">Delicately made pasta in a sauce</div>
+            <div class="mt-3 mb-3">
+              <table class="ml-0">
+                <tbody><tr>
+                  <td>Quantity </td>
+                  <td><input name="pasta" class="b2" type="number" ng-init="past=0" ng-model="past" id="pasta"></td>
+                </tr>
+                <tr>
+                  <td class="pt-2 pb-2 pr-2">Price</td>
+                  <td>
+                    <p id="pastaprice" class="pt-3 text-left">Rs. {{130*past}}</p>
+                  </td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+          <div><img class="mt-4" src="resources/pasta.png" alt="pasta" height="250px" width="250px"></div>
+
         </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas ducimus maiores ex magni unde, possimus at pariatur quisquam nam, exercitationem ipsam? Repudiandae perspiciatis corporis ratione deserunt, asperiores non nemo?</p>
         <button>Add to Cart</button>
       </div>
+
     </div>
 
     <div class="food-items">
@@ -76,6 +187,30 @@
         <div class="details-sub">
           <h5>Parotta</h5>
           <h5 class="price">Rs 50</h5>
+
+      <br>
+      <div class="panner left a1 rounded">
+        <div class="d-flex justify-content-around">
+          <div><img class="mt-4" src="resources/panner.png" alt="panner" height="250px" width="250px"></div>
+          <div class="">
+            <div class="display-3 text-left mb-5">Panner<br>butter masala</div>
+            <div class="h4 text-left">Description</div>
+            <div class="">Freshly made panner in a hot masala</div>
+            <div class="mt-3 mb-3 text-center">
+              <table class="ml-0">
+                <tbody><tr>
+                  <td>Quantity </td>
+                  <td><input name="panner" class="b2" type="number" ng-init="pann=0" ng-model="pann" id="panner"></td>
+                </tr>
+                <tr>
+                  <td class="pt-2 pb-2 text-left pr-2">Price</td>
+                  <td>
+                    <p id="pannerprice" class="pt-3 text-left">Rs. {{150*pann}}</p>
+                  </td>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
         </div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga voluptas ducimus maiores ex magni unde, possimus at pariatur quisquam nam, exercitationem ipsam? Repudiandae perspiciatis corporis ratione deserunt, asperiores non nemo?</p>
         <button>Add to Cart</button>
