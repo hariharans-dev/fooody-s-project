@@ -247,6 +247,7 @@ app.get("/menu", (req, res) => {
   $("#title").css("display", "none");
   $("#table").text("");
   $("#main-area").text("");
+  $("#menubutton").text("");
 
   if (Empty !== 1) {
     console.log("it is not empty");
@@ -318,11 +319,8 @@ app.get("/menu", (req, res) => {
       "<img src='resources/emptycart.png' class='empty-cart'>"
     );
     $("#main-area").append("<p class='ecart-p'>Your Cart Is Empty 😞  </p>");
-    $(".ecart-p").append(
-      "<a href='/menu selection/menu.html'><button class='glow-on-hover' type='button'>Menu</button></a>"
-    );
+    $("#menubutton").text("Menu")
   }
-  3;
   const staticpath1 = path.join(__dirname, "../viewcart/public");
   app.use(express.static(staticpath1));
 
@@ -400,3 +398,9 @@ app.get("/updatepass", (req, res) => {
     }
   });
 });
+
+app.get('/menufile',(req,res)=>{
+  const staticpath1 = path.join(__dirname, "../menu/public");
+  app.use(express.static(staticpath1));
+  res.sendFile(path.join(__dirname, "../menu/public/menu.html"));
+})

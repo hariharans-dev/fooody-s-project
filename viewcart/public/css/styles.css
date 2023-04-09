@@ -225,3 +225,7 @@ td{
   border-bottom:2px solid #e7b10a;
   padding: 50px;
 }
+#menubutton{
+  margin-left: auto;
+  margin-right: auto;
+}
