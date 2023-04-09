@@ -60,8 +60,6 @@ itemuser
     console.log("error in getting the costs of items");
   });
 
-
-
 app.listen(8000, (req, res) => {
   console.log("server is up");
 });
@@ -320,8 +318,13 @@ app.get("/menu", (req, res) => {
     $("#main-area").append(
       "<img src='resources/emptycart.png' class='empty-cart'>"
     );
-    $("#main-area").append("<p class='ecart-p'>Your Cart Is Empty 😞  </p>");
-    $("#menubutton").text("Menu")
+    $("#main-area").append(
+      "<div class='ecart-p'>Your Cart Is Empty 😞 " +
+        "<form action='http://localhost:8000/menufile' style='display: inline'>" +
+        "        <button id='menubutton' class='glow-on-hover'>Menu</button>" +
+        "      </form>" +
+        " </div>"
+    );
   }
   const staticpath1 = path.join(__dirname, "../viewcart/public");
   app.use(express.static(staticpath1));
@@ -401,23 +404,23 @@ app.get("/updatepass", (req, res) => {
   });
 });
 
-app.get('/menu',(req,res)=>{
+app.get("/menu", (req, res) => {
   const staticpath1 = path.join(__dirname, "../menu/public");
   app.use(express.static(staticpath1));
   res.sendFile(path.join(__dirname, "../menu/public/menu.html"));
-})
+});
 
+app.get("/updateaddress", (req, res) => {
+  var obj = req.query;
 
-app.get('/updateaddress',(req,res)=>{
-  var obj=req.query
+  var addressuser = mongoose.model(addressuser, "userSchema");
 
-  var addressuser=mongoose.model(addressuser,'userSchema')
-
-  addressuser.updateOne({username:customer},{$set:{address:obj['address']}})
-  .then(()=>{
-    console.log('addresss updated')
-  })
-  .catch(err=>{
-    console.log('address not updated')
-  })
-})
+  addressuser
+    .updateOne({ username: customer }, { $set: { address: obj["address"] } })
+    .then(() => {
+      console.log("addresss updated");
+    })
+    .catch((err) => {
+      console.log("address not updated");
+    });
+});

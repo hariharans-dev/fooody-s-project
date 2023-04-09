@@ -12,49 +12,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&amp;family=Tilt+Warp&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>Fooody's</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="navbar p-2" id="nvbar1">
-        <div><img src="resources/org logo.png" alt="logo" height="100px" style="border-radius: 50%"><span class="head">Secure Checkout</span></div>
-        <div class="loginmenu r b3">
-            <form action="http://localhost:8000/previousorder" method="get">
-<!--              <button class="submit-btn prev"><img id="menutab" src="resources/img.png" alt="menuimage" height="50px"></button>-->
-                <input type="image" src="resources/img2.png" alt="Submit" height="75px" class="me-3">
-
-            </form>
-        </div>
+      <div>
+        <img src="resources/org logo.png" alt="logo" height="100px" style="border-radius: 50%"><span class="head">Secure Checkout</span>
+      </div>
+      <div class="loginmenu r b3">
+        <form action="http://localhost:8000/previousorder" method="get">
+          <!--              <button class="submit-btn prev"><img id="menutab" src="resources/img.png" alt="menuimage" height="50px"></button>-->
+          <input type="image" src="resources/img2.png" alt="Submit" height="75px" class="me-3">
+        </form>
+      </div>
     </div>
-    <table id="table"></table>
-    <div id="main-area"><img src="resources/emptycart.png" class="empty-cart"><p class="ecart-p">Your Cart Is Empty 😞  </p></div>
-    <div class="text-center"><form action="http://localhost:8000/menufile"><button id="menubutton" class="submit-btn glow-on-hover">Menu</button></form></div>
+    <table id="table"><tr><th>S.no</th><th>Item</th><th>Rate</th><th>Quantity</th><th>Price</th></tr><tr><td>1.</td><td class="item th"><img class="item-image img-circle" src="resources/panner.png"></td><td><p class="name">PANNER</p><p>₹ 200</p></td><td class="th"><p></p><p>1</p><p></p></td><td class="th"><p></p><p>200</p><p></p></td></tr><tr><td colspan="5" class="total text-end">Total: 200.00</td></tr></table>
+    <div id="main-area"></div>
+<!--    <div class="ecart-p" style="display: inline">-->
+<!--      <form action="http://localhost:8000/menufile" style="display: inline">-->
+<!--        <button id="menubutton" class="glow-on-hover">Menu</button>-->
+<!--      </form>-->
+<!--    </div>-->
 
     <script>
-        $(document).ready(function(){
-            $('#popdrop').hide()
-            $('#pass').hide()
-        })
-        if($('#main-area').text().length==0){
-            $('#menubutton').hide()
-        }
-        $('#userimg').click(function(){
-            $('#popdrop').show()
-        })
-        $('#userimg').mouseleave(function(){
-            $('#popdrop').mouseleave(function(){
-                $('#popdrop').hide()
-            })
-        })
+      $(document).ready(function () {
+        $("#popdrop").hide();
+        $("#pass").hide();
+      });
+      if ($("#main-area").text().length == 0) {
+        $("#menubutton").hide();
+      }
+      $("#userimg").click(function () {
+        $("#popdrop").show();
+      });
+      $("#userimg").mouseleave(function () {
+        $("#popdrop").mouseleave(function () {
+          $("#popdrop").hide();
+        });
+      });
 
-        $('#sout').click(function(){
-            $('#pass').show()
-            $('#popdrop').hide()
-        })
+      $("#sout").click(function () {
+        $("#pass").show();
+        $("#popdrop").hide();
+      });
 
-        $('#pass').mouseenter(function(){
-            $('#pass').mouseleave(function(){
-                $('#pass').hide()
-            })})
+      $("#pass").mouseenter(function () {
+        $("#pass").mouseleave(function () {
+          $("#pass").hide();
+        });
+      });
     </script>
+  
 
 </body></html>
