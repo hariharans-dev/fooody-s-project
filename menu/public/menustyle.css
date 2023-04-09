@@ -1,96 +1,289 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.t{
+  font-family: 'Satisfy', cursive;
+  font-size: xx-large;
+  color: brown;
 }
-
 body{
-  background-color: #f3f3f3;
+    background-color: gainsboro;
+}
+.food{
+  background-color: orange;
+}
+.a1 {
+  /* margin-top: 10px; */
+  background-color: white;
+}
+.back{
+  background-color: #f1f1ed;
+}
+td {
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 15px;
+}
+.b1:hover {
+  transform: scale(1.2);
+  transition: transform .5s ease;
+  background-color: #8f8f8e;
+  }
+  .b3:hover {
+  transform: scale(1.2);
+  transition: transform .5s ease;
+  }
+.b2:hover {
+  transform: scale(1.02);
+  transition: transform .6s ease;
+  }
+  .border{
+  margin-left: auto;
+  margin-right: auto;
+  }
+  @keyframes slideIn {
+    0% {
+        transform: translateX(-10%);
+    }
 
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideOut {
+    0% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+.left{
+  animation: slideIn 3s ease;
+}
+.right{
+  animation: slideOut 3s ease;
+}
+.username,.loginmenu{
+  padding-top: 45px;
+}
+.username{
+  padding-top: 45px;
+  margin-right: 20px;
+}
+.details{
+  vertical-align: middle;
+}
+.submit{
+  position: sticky;
+  bottom: 10%;
 }
 
-.menu{
-  padding: 0 10px 30px 10px;
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(350px, 1fr));
-  grid-gap: 20px 40px;
-}
-
-.heading{
-  background-color: #cb202d;
-  color: #ffffff;
-  margin-bottom: 30px;
-  padding: 30px 0;
-  grid-column: 1/-1;
+td{
   text-align: center;
 }
-
-.heading>h1{
-  font-weight: 400;
-  font-size: 30px;
-  letter-spacing: 10px;
-  margin-bottom: 10px;
+.popbox,.password{
+  position: fixed;
+  top: 13%;
+  right: 1%;
+  background-color: #eae6daeb;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  border: 1px solid;
+}
+.it{
+  padding-right: 30px;
 }
 
-.heading>h3{
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: 5px;
-}
-.food-items{
-  display: grid;
-  position: relative;
-  grid-template-rows: auto 1fr;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+.r{
+  padding-right: 20px;
 }
 
-.food-items img{
+.right{
+  margin-right: 30px;
+}
+
+.prev{
+  background-color: #E7B10A;
+}
+
+.dosa {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.dosa .display-3 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dosa .h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dosa table {
+  margin-left: 0;
+}
+
+.dosa input[type="number"] {
+  width: 80px;
+  height: 40px;
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.dosa p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.dosa img {
+  margin-top: 30px;
+}
+
+.restaurant-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.restaurant-info {
+  max-width: 600px;
+}
+
+.restaurant-name {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.restaurant-description {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.restaurant-location-link {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.restaurant-image {
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
+
+.restaurant-location-link {
+  background-color: #ffc107; /* Set button background color */
+  color: #fff; /* Set button text color */
+  border: none; /* Remove button border */
+  padding: 12px 24px; /* Set button padding */
+  border-radius: 4px; /* Add button border radius */
+  font-size: 16px; /* Set button font size */
+  font-weight: bold; /* Set button font weight */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.2s ease; /* Add transition effect */
+}
+
+.restaurant-location-link:hover {
+  background-color: #ff9800; /* Set button background color on hover */
+}
+
+.tandoori-header {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.tandoori-header:hover {
+  background-color: white;
+  color: orange;
+}
+
+
+.moveimg {
   position: relative;
   width: 100%;
-  border-radius: 15px 15px 0 0;
+  height: 300px;
+  overflow: hidden;
+}
+.moveimg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.moveimg img.active {
+  opacity: 1;
 }
 
-h1{
-  grid-column: 1/-1;
-  text-align: center;
+/* Optional styles to center the images vertically and horizontally */
+.moveimg img {
+  object-fit: contain;
 }
 
-.details{
-  padding: 20px 10px;
-  display: grid;
-  grid-template-rows: auto 1fr 50px;
-  grid-row-gap: 15px;
-}
-
-.details-sub{
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-.details-sub>h5{
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.price{
-  text-align: right;
-}
-
-.details{
-  color: #6f6f6f;
-  font-size: 15px;
-  line-height: 28px;
-  font-weight: 400;
-  align-self: stretch;
-}
-
-.details>button{
-  background-color: #cb202d;
-  border: none;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
+.dosa-header {
+  background-color: orange;
+  color: white;
+  padding: 10px;
   border-radius: 5px;
-  width: 180px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dosa-header:hover {
+  background-color: white;
+  color: orange;
+}
+
+.pasta-header {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.pasta-header:hover {
+  background-color: white;
+  color: orange;
+}
+
+.panner-header {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.panner-header:hover {
+  background-color: white;
+  color: orange;
+}
+
+.parotta-header {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.parotta-header:hover {
+  background-color: white;
+  color: orange;
 }
