@@ -409,5 +409,15 @@ app.get('/menu',(req,res)=>{
 
 
 app.get('/updateaddress',(req,res)=>{
-  var 
+  var obj=req.query
+
+  var addressuser=mongoose.model(addressuser,'userSchema')
+
+  addressuser.updateOne({username:customer},{$set:{address:obj['address']}})
+  .then(()=>{
+    console.log('addresss updated')
+  })
+  .catch(err=>{
+    console.log('address not updated')
+  })
 })
