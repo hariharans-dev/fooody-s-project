@@ -8,7 +8,7 @@ const app = express();
 var userSchema = new mongoose.Schema(
   {
     username: { type: String, required: true, unique: true },
-    email: { type: String },
+    address: { type: String },
     password: { type: String, required: true },
   },
   { collection: "users" }
@@ -60,6 +60,8 @@ itemuser
     console.log("error in getting the costs of items");
   });
 
+
+
 app.listen(8000, (req, res) => {
   console.log("server is up");
 });
@@ -90,7 +92,7 @@ app.get("/signup", (req, res) => {
   user
     .create({
       username: obj["user"],
-      email: obj["email"],
+      address: obj["address"],
       password: obj["password"],
     })
     .then(() => {
@@ -399,8 +401,13 @@ app.get("/updatepass", (req, res) => {
   });
 });
 
-app.get('/menufile',(req,res)=>{
+app.get('/menu',(req,res)=>{
   const staticpath1 = path.join(__dirname, "../menu/public");
   app.use(express.static(staticpath1));
   res.sendFile(path.join(__dirname, "../menu/public/menu.html"));
+})
+
+
+app.get('/updateaddress',(req,res)=>{
+  var 
 })
