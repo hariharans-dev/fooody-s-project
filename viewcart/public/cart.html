@@ -1,63 +1,91 @@
 <!DOCTYPE html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/resources/original logo.jpg" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&amp;family=Tilt+Warp&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Fooody's</title>
-  </head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script crossorigin="anonymous" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <link href="/resources/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="/resources/original logo.jpg" rel="icon" type="image/x-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&amp;family=Tilt+Warp&amp;display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <title>Fooody's</title>
+</head>
 
-  <body>
-    <div class="navbar p-2" id="nvbar1">
-      <div>
-        <img src="resources/org logo.png" alt="logo" height="100px" style="border-radius: 50%"><span class="head">Secure Checkout</span>
-      </div>
-      <div class="loginmenu r b3">
-        <form action="http://localhost:8000/previousorder" method="get">
-          <!--              <button class="submit-btn prev"><img id="menutab" src="resources/img.png" alt="menuimage" height="50px"></button>-->
-          <input type="image" src="resources/img2.png" alt="Submit" height="75px" class="me-3">
+<body>
+<div class="navbar p-2" id="nvbar1">
+  <div>
+    <img alt="logo" height="100px" src="resources/org logo.png" style="border-radius: 50%"><span class="head">Secure Checkout</span>
+  </div>
+  <div class="loginmenu r b3">
+    <form action="http://localhost:8000/previousorder" method="get">
+      <!--              <button class="submit-btn prev"><img id="menutab" src="resources/img.png" alt="menuimage" height="50px"></button>-->
+      <input alt="Submit" class="me-3" height="75px" src="resources/img2.png" type="image">
+    </form>
+  </div>
+</div>
+<table id="table"><tr><th>S.no</th><th>Item</th><th>Rate</th><th>Quantity</th><th>Price</th></tr><tr><td>1.</td><td class="item th"><img class="item-image img-circle" src="resources/dosa.png"></td><td><p class="name">DOSA</p><p>₹ 40</p></td><td class="th"><p></p><p>1</p><p></p></td><td class="th"><p></p><p>40</p><p></p></td></tr><tr><td>2.</td><td class="item th"><img class="item-image img-circle" src="resources/pasta.png"></td><td><p class="name">PASTA</p><p>₹ 100</p></td><td class="th"><p></p><p>1</p><p></p></td><td class="th"><p></p><p>100</p><p></p></td></tr><tr><td>3.</td><td class="item th"><img class="item-image img-circle" src="resources/panner.png"></td><td><p class="name">PANNER</p><p>₹ 200</p></td><td class="th"><p></p><p>1</p><p></p></td><td class="th"><p></p><p>200</p><p></p></td></tr></table>
+<div id="ord-summary" style="display: inline;">
+  <table>
+    <tbody>
+    <tr>
+      <th class="h4" colspan="2">Order Summary</th>
+    </tr>
+    <tr>
+      <td>Price(₹)</td>
+      <td id="price">340</td>
+    </tr>
+    <tr>
+      <td>Taxes(18%)</td>
+      <td id="tax">61.2</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td id="total">401</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <form action="http://localhost:8000/updateaddress" method="get">
+          <button class="glow-on-hover" type="submit">Proceed to Checkout</button>
         </form>
-      </div>
-    </div>
-    <table id="table"></table>
-    <div id="main-area"></div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div id="main-area"></div>
+
+<script>
+  $(document).ready(function() {
+    $("#popdrop").hide();
+    $("#pass").hide();
+  });
+  if ($("#main-area").text().length == 0) {
+    $("#menubutton").hide();
+  }
+  $("#userimg").click(function() {
+    $("#popdrop").show();
+  });
+  $("#userimg").mouseleave(function() {
+    $("#popdrop").mouseleave(function() {
+      $("#popdrop").hide();
+    });
+  });
+
+  $("#sout").click(function() {
+    $("#pass").show();
+    $("#popdrop").hide();
+  });
+
+  $("#pass").mouseenter(function() {
+    $("#pass").mouseleave(function() {
+      $("#pass").hide();
+    });
+  });
+</script>
 
 
-    <script>
-      $(document).ready(function () {
-        $("#popdrop").hide();
-        $("#pass").hide();
-      });
-      if ($("#main-area").text().length == 0) {
-        $("#menubutton").hide();
-      }
-      $("#userimg").click(function () {
-        $("#popdrop").show();
-      });
-      $("#userimg").mouseleave(function () {
-        $("#popdrop").mouseleave(function () {
-          $("#popdrop").hide();
-        });
-      });
-
-      $("#sout").click(function () {
-        $("#pass").show();
-        $("#popdrop").hide();
-      });
-
-      $("#pass").mouseenter(function () {
-        $("#pass").mouseleave(function () {
-          $("#pass").hide();
-        });
-      });
-    </script>
-  
 
 </body></html>

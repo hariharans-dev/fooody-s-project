@@ -1,233 +1,257 @@
 .nvbar1 {
-  height: 50px;
-
+    height: 50px;
 }
 
 span {
-  padding: 20px;
-  font-family: "Tilt Warp", cursive;
-  font-size: xx-large;
-  font-weight: bolder;
+    padding: 20px;
+    font-family: "Tilt Warp", cursive;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: #FFD93D;
 }
 
 .usr:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s;
-  background-color: #898121;
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    background-color: #898121;
 }
 
-html,body {
-  /*background-color: #D4D925;*/
-  height: 100%;
+html,
+body {
+    /*background-color: #D4D925;*/
+    height: 100%;
 }
 
 body {
-  /*background-image:url("https://img.freepik.com/premium-vector/square-frame-with-delicious-fast-food-menu-template_18591-71140.jpg") ;*/
-  background-image: url("../resources/food-delivery-2-5459.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  padding-bottom: 20px;
-  /*position: sticky;*/
-  /*margin: 0;*/
-  color: #FFEE63;
+    /*background-image:url("https://img.freepik.com/premium-vector/square-frame-with-delicious-fast-food-menu-template_18591-71140.jpg") ;*/
+    /*background-image: url("../resources/food-delivery-2-5459.jpg");*/
+    background-image: url("../resources/image.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding-bottom: 20px;
+    /*position: sticky;*/
+    /*margin: 0;*/
+    color: #ffee63;
 }
 
 #nvbar1 {
-  /*background-color: #FF5B00;*/
-  /*background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.5));*/
-  background-color: rgba(255, 255, 255, 0.2);
-  margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 50px;
 }
 
 @keyframes slideIn {
-  0% {
-    transform: translateY(100%);
-  }
+    0% {
+        transform: translateY(100%);
+    }
 
-  100% {
-    transform: translateX(0);
-  }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .glow-on-hover {
-  width: 220px;
-  height: 50px;
-  border: none;
-  outline: none;
-  color: #f7f1e5;
-  background: #4c4b16;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #f7f1e5;
+    background: #4c4b16;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
 }
 
 .glow-on-hover:before {
-  content: "";
-  background: linear-gradient(45deg, #898121);
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing 20s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
+    content: "";
+    background: linear-gradient(45deg, #898121);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
 }
 
 .glow-on-hover:active {
-  color: #e7b10a;
+    color: #e7b10a;
 }
 
 .glow-on-hover:active:after {
-  background: transparent;
+    background: transparent;
 }
 
 .glow-on-hover:hover:before {
-  opacity: 1;
+    opacity: 1;
 }
 
 .glow-on-hover:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #111;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
 }
 
 @keyframes glowing {
-  0% {
-    background-position: 0 0;
-  }
+    0% {
+        background-position: 0 0;
+    }
 
-  50% {
-    background-position: 400% 0;
-  }
+    50% {
+        background-position: 400% 0;
+    }
 
-  100% {
-    background-position: 0 0;
-  }
+    100% {
+        background-position: 0 0;
+    }
 }
 
 .item-image {
-  /*border: 3px solid transparent;*/
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  display: inline;
-  /*border-image: url("viewcart/public/resources/frame-5437997_1280.png") round;*/
-  /* display: block; */
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: inline;
 }
 
 #main-area {
-  width: 80%;
-  margin: 50px auto;
-  animation: slideIn 1s ease;
+    width: 80%;
+    margin: 50px auto;
+    animation: slideIn 1s ease;
 }
 
 #table {
-  font-family: "Tilt Warp", cursive;
-  padding: 100px;
-  margin: 30px auto 30px 10%;
-  animation: slideIn 1s ease;
+    font-family: "Tilt Warp", cursive;
+    display: inline;
+    padding: 100px;
+    margin: 30px auto 30px 1%;
+    animation: slideIn 1s ease;
+}
 
+div#ord-summary {
+    display: inline;
+    border-radius: 10%;
+    border: 1px solid transparent;
+    color: #000000;
+    font-family: "Tilt Warp", cursive;
+    margin-left: 3%;
+    animation: slideIn 1s ease;
+}
+
+#ord-summary table {
+    display: inline;
+    margin: 0;
+    border-radius: 20%;
+}
+
+#ord-summary table td, #ord-summary table th {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#ord-summary table th {
+    background-color: #FFD93D;
 }
 
 .th {
-  text-align: center;
-  padding: 20px;
-  /*border: 2px solid #898121;*/
+    text-align: center;
+    padding: 20px;
 }
 
-th{
-  text-align: center;
-  border-bottom: 2px solid #e7b10a;
-  padding: 20px;
+th {
+    text-align: center;
+    border-bottom: 2px solid #e7b10a;
+    padding: 20px;
 }
+
 .item {
-  text-align: left;
+    text-align: left;
 }
 
-#title{
+#title {
     font-family: "Tilt Warp", cursive;
     margin-left: 100px;
     margin-top: 50px;
 }
+
 .name {
-  /*padding: 10px;*/
-  /*margin-top: 25px;*/
-  text-align: left;
+    text-align: left;
 }
 
 .total {
-  text-align: right;
+    text-align: right;
 }
 
 .empty-cart {
-  height: 250px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .ecart-p {
-  font-family: "Tilt Warp", cursive;
-  font-size: xx-large;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 15px;
-  color: #FFEE63;
-  text-align: center;
+    font-family: "Tilt Warp", cursive;
+    font-size: xx-large;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    color: #ffee63;
+    text-align: center;
 }
 
 td {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
 .popbox,
 .password {
-  position: fixed;
-  top: 13%;
-  right: 1%;
-  background-color: #eae6daeb;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  padding-right: 20px;
-  border: 1px solid;
+    position: fixed;
+    top: 13%;
+    right: 1%;
+    background-color: #eae6daeb;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border: 1px solid;
 }
+
 .it {
-  padding-right: 30px;
+    padding-right: 30px;
 }
 
 .total {
-  /*border: 2px solid #e7b10a;*/
-  text-align: right;  padding-top: 10px;
-  padding-bottom: 10px;
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-#table{
-  /*border: 2px solid #e7b10a;*/
-  margin-bottom: 100px;
+td {
+    border-bottom: 2px solid #e7b10a;
+    padding: 50px;
 }
 
-td{
-  border-bottom:2px solid #e7b10a;
-  padding: 50px;
-}
-#menubutton{
-  margin-left: auto;
-  margin-right: auto;
+#menubutton {
+    margin-left: auto;
+    margin-right: auto;
 }

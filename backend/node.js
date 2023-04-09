@@ -54,6 +54,7 @@ itemuser
       var jsobj = JSON.parse(jsonstring);
       prices = Object.values(jsobj);
     }
+
     fn();
   })
   .catch((err) => {
@@ -244,6 +245,7 @@ app.get("/menu", (req, res) => {
       break;
     }
   }
+  $("#ord-summary").css("display", "none");
   $("#title").css("display", "none");
   $("#table").text("");
   $("#main-area").text("");
@@ -261,6 +263,7 @@ app.get("/menu", (req, res) => {
       "resources/panner.png",
     ];
     $("#title").css("display", "block");
+    $("#ord-summary").css("display", "inline");
     $("#table").append(
       "<tr>" +
         "<th>S.no</th>" +
@@ -307,12 +310,12 @@ app.get("/menu", (req, res) => {
             "</tr>"
         );
       }
+      $("#price").text(tot);
+      let tax = tot * 0.18;
+      $("#tax").text(tax.toFixed(1));
+      let payamt = tot + tax;
+      $("#total").text(Math.round(payamt));
     }
-    $("#table").append(
-      "<tr><td colspan='5' class='total text-end'>Total: " +
-        tot +
-        ".00</td></tr>"
-    );
   } else {
     console.log("it is empty");
     $("#main-area").append(
