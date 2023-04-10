@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00571c0b-a7d6-40f1-b2b0-dcf45378f0c4" name="Changes" comment="Improved design of cart page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loginpage/public/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginpage/public/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewcart/public/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewcart/public/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewcart/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/viewcart/public/css/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="00571c0b-a7d6-40f1-b2b0-dcf45378f0c4" name="Changes" comment="Improved design of cart page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,17 +54,21 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JavaScript Debug.cart.html">
+  <component name="RunManager" selected="Node.js.node.js">
     <configuration name="cart.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fooody-s-project/viewcart/public/cart.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="node.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/backend/node.js" working-dir="$PROJECT_DIR$/backend">
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.cart.html" />
+      <item itemvalue="Node.js.node.js" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.cart.html" />
         <item itemvalue="Node.js.node.js" />
+        <item itemvalue="JavaScript Debug.cart.html" />
       </list>
     </recent_temporary>
   </component>
