@@ -26,8 +26,8 @@
     </form>
   </div>
 </div>
-<table id="table"></table>
-<div id="ord-summary" style="display: none;">
+<table id="table"><tr><th>S.no</th><th>Item</th><th>Rate</th><th>Quantity</th><th>Price</th></tr><tr><td>1.</td><td class="item th"><img class="item-image img-circle" src="resources/parotta.png"></td><td><p class="name">PAROTTA</p><p>₹ -10</p></td><td class="th"><p></p><p>-1</p><p></p></td><td class="th"><p></p><p>10</p><p></p></td></tr><tr><td>2.</td><td class="item th"><img class="item-image img-circle" src="resources/tandoori.png"></td><td><p class="name">TANDOORI</p><p>₹ 1</p></td><td class="th"><p></p><p>2</p><p></p></td><td class="th"><p></p><p>2</p><p></p></td></tr></table>
+<div id="ord-summary" style="display: inline;">
   <table>
     <tbody>
     <tr>
@@ -35,15 +35,15 @@
     </tr>
     <tr>
       <td>Price(₹)</td>
-      <td id="price">50</td>
+      <td id="price">12</td>
     </tr>
     <tr>
       <td>Taxes(18%)</td>
-      <td id="tax">9.0</td>
+      <td id="tax">2.2</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td id="total">59</td>
+      <td id="total">14</td>
     </tr>
     <tr>
       <td colspan="2">
@@ -55,7 +55,7 @@
     </tbody>
   </table>
 </div>
-<div id="main-area"><img src="resources/emptycart.png" class="empty-cart"><div class="ecart-p">Your Cart Is Empty 😞 <form action="http://localhost:8000/menufile" style="display: inline">        <button id="menubutton" class="glow-on-hover">Menu</button>      </form> </div></div>
+<div id="main-area"></div>
 
 <script>
   $(document).ready(function() {

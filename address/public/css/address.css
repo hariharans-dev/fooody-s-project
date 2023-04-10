@@ -18,4 +18,13 @@ body{
 }
 .ft{
     font-size: xx-large;
+    /* font-weight: 200; */
+    font-family: "Tilt Warp", cursive;
+    background-color: rgb(242, 135, 7);
+    margin-left: 15%;
+    margin-right: 35%;
+    text-align: center;
+    animation: slideIn 1s ease;
+    top: 90%;
+    left: 100px;
 }
