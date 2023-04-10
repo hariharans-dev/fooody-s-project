@@ -4,6 +4,8 @@ const fs = require("fs");
 const cheerio = require("cheerio");
 const path = require("path");
 const app = express();
+const{ DateTime } = require('luxon');
+
 
 var userSchema = new mongoose.Schema(
   {
@@ -407,23 +409,32 @@ app.get("/updatepass", (req, res) => {
   });
 });
 
-app.get("/menu", (req, res) => {
+app.get("/menufile", (req, res) => {
   const staticpath1 = path.join(__dirname, "../menu/public");
   app.use(express.static(staticpath1));
   res.sendFile(path.join(__dirname, "../menu/public/menu.html"));
 });
 
-app.get("/updateaddress", (req, res) => {
-  var obj = req.query;
+app.get("/addresspage", (req, res) => {
+  console.log('address is loaded')
+  const staticpath9=path.join(__dirname,"../address/public")
+  app.use(express.static(staticpath9))
+  const html = fs.readFileSync(path.join(__dirname, "../address/public/address.html"),"utf-8");
+  const $ = cheerio.load(html);
+  $("#replace").text('')
 
-  var addressuser = mongoose.model(addressuser, "userSchema");
+  let date = DateTime.local();
+  let data
+  
 
-  addressuser
-    .updateOne({ username: customer }, { $set: { address: obj["address"] } })
-    .then(() => {
-      console.log("addresss updated");
-    })
-    .catch((err) => {
-      console.log("address not updated");
-    });
+  var addressuser=mongoose.model('addressuser',userSchema)
+  addressuser.findOne({username:customer},{_id:0})
+  .then((result)=>{
+    var address=result['address']
+    data=address
+  })
+  console.log(data)
+  $("#replace").append(data)
+  fs.writeFileSync(path.join(__dirname, "../address/public/address.html"),$.html());
+  res.sendFile(path.join(__dirname, "../address/public/address.html"));
 });

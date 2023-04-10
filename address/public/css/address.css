@@ -1,0 +1,21 @@
+body{
+    background-image: url('../resources/orderbg.webp');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.delivery{
+    margin-top: 1%;
+    animation: slideIn 1s ease;
+}
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+.ft{
+    font-size: xx-large;
+}
