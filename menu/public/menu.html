@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <link rel="stylesheet" href="css/menustyle.css">
+  <link rel="stylesheet" href="menustyle.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="icon" href="resources/original logo.jpg" type="image/x-icon">
   <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon">
@@ -14,10 +14,10 @@
 <body ng-app="">
   <div class="food container-fluid rounded">
     <div class="d-flex justify-content-between">
-      <div class="t b2"><img src="resources/transparent logo.png" alt="photo" width="150px" height="150px">Fooody's</div>
+      <div class="t b2"><img src="resources/transparent logo.png" alt="photo" width="150px" height="150px">MENU</div>
       <div class="d-flex">
         <div id="replace" class="h5 mt-3 text-right username">Welcome Hariharan S</div>
-        <div class="text-white text-right b3 rounded loginmenu"><img id="userimg" src="/resources/usrimg.png" alt="user" width="50px"></div>
+        <div class="text-white text-right b3 rounded loginmenu"><img id="userimg" src="/menu/public/resources/ppic.png" alt="user" width="50px"></div>
         <div id="popdrop" class="popbox">
           <form action="http://localhost:8000/signout" method="get">
             <button class="submit-btn">sign out</button>
@@ -56,17 +56,24 @@
   </div>
   
   
-  <div class="restaurant-info-container">
-    <div class="restaurant-info">
-      <h3 class="restaurant-name">Hotel Fortune Park</h3>
-      <p class="restaurant-description">This is a fine dining restaurant located in Vellore. It is a five-star restaurant.</p>
-      <a href="https://goo.gl/maps/neLT2fwgvA7Lf2LP7" class="btn btn-primary restaurant-location-link" role="button" target="_blank">View location</a>
-
-    </div>
-    <div class="restaurant-image">
-      <img src="resources/fortunepark.png" alt="Fortune Park" width="400px" height="200px">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="restaurant-info-container">
+              <div class="restaurant-info text-center">
+                <p class="hotel-detected mb-0" style="font-size: 24px;">HOTEL DETECTED: HOTEL FORTUNE PARK</p>
+                <p class="selected-hotel mb-0 mt-2 font-weight-bold" style="font-size: 32px;">SELECTED HOTEL: HOTEL FORTUNE PARK</p>
+                <a href="https://goo.gl/maps/neLT2fwgvA7Lf2LP7" class="btn btn-info d-flex justify-content-center mt-3" role="button" target="_blank">View location</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  
   
   <br>
   <form action="http://localhost:8000/menu" method="GET">
@@ -77,7 +84,7 @@
           <img src="resources/parotta.png" alt="parotta" height="250px" width="250px">
         </div>
         <div class="flex-grow-1 mx-4 d-flex flex-column justify-content-center">
-          <div class="display-3 text-left mb-4">Parotta</div>
+          <div class="display-3 text-left mb-4 parotta-title">Parotta</div>
           <div class="h4 text-left mb-2">Description</div>
           <div class="mb-4">Bread made of wheat flour which is fluffy and slightly crispy</div>
           <table class="">
@@ -97,16 +104,18 @@
         </div>
       </div>
       
+      
       <br>
-      <div class="d-flex justify-content-around">
+      <div class="d-flex justify-content-around dosa a1 rounded">
         <div class="dosa-header">
           <div class="display-3 text-left mb-5">Dosa</div>
-            <div class="h4 text-left">Description</div>
-            <div class="">It is a cripy batter roasted to prefection served with sambar</div>
-            <div class="mt-3 mb-3">
-              <table class="ml-0">
-                <tbody><tr>
-                  <td>Quantity </td>
+          <div class="h4 text-left">Description</div>
+          <div class="">It is a crispy batter roasted to perfection served with sambar</div>
+          <div class="mt-3 mb-3">
+            <table class="ml-0">
+              <tbody>
+                <tr>
+                  <td>Quantity</td>
                   <td><input name="dosa" class="b2" type="number" ng-init="dos=0" ng-model="dos" id="dosa"></td>
                 </tr>
                 <tr>
@@ -115,12 +124,14 @@
                     <p id="dosaprice" class="pt-3 text-left">Rs. {{60*dos}}</p>
                   </td>
                 </tr>
-              </tbody></table>
-            </div>
+              </tbody>
+            </table>
           </div>
-          <div class="pr-3"><img class="mt-4" src="resources/dosa.png" alt="dosa" height="250px" width="250px"></div>
         </div>
+        <div class="pr-3"><img class="mt-4" src="resources/dosa.png" alt="dosa" height="250px" width="250px"></div>
       </div>
+      
+      
       <br>
       <div class="tandoori left a1 rounded">
         <div class="d-flex justify-content-around">
@@ -149,8 +160,8 @@
       <br>
       <div class="pasta a1 right rounded">
         <div class="d-flex justify-content-around">
-          <div class="pasta-header">
-            <div class="display-3 text-left mb-5">Pasta</div>
+          <div class="text-center">
+            <h1 class="display-3 text-left mb-5 pasta-header">Pasta</h1>
             <div class="h4 text-left">Description</div>
             <div class="">Delicately made pasta in a sauce</div>
             <div class="mt-3 mb-3">
@@ -170,7 +181,9 @@
               </table>
             </div>
           </div>
-          <div><img class="mt-4" src="resources/pasta.png" alt="pasta" height="250px" width="250px"></div>
+          <div>
+            <img class="mt-4" src="resources/pasta.png" alt="pasta" height="250px" width="250px">
+          </div>
         </div>
       </div>
       
@@ -179,7 +192,7 @@
         <div class="d-flex justify-content-around">
           <div><img class="mt-4" src="resources/panner.png" alt="panner" height="250px" width="250px"></div>
           <div class="panner-header">
-            <div class="display-3 text-left mb-5">Panner<br>butter masala</div>
+            <div class="display-3 text-left mb-5 panner-title">Panner<br>butter masala</div>
             <div class="h4 text-left">Description</div>
             <div class="">Freshly made panner in a hot masala</div>
             <div class="mt-3 mb-3 text-center">
@@ -202,36 +215,40 @@
         </div>
       </div>
       
+      
     </div>
   </div>
-  <div class="pb-5 back">
-    <div class="submit text-center text-white h1"><input class="p b1 btn btn-danger pt-2 pb-2 pl-3 pr-3" type="submit" value="View cart">
-
+  <div class="submit text-center text-white h1">
+    <input class="p b1 btn btn-danger btn-primary pt-2 pb-2 pl-3 pr-3 d-flex justify-content-center" type="submit" value="View cart">
   </div>
+  
   </form>
   <div class="bg-dark text-white">
     <div class="text-center">Developed by Arvind Kumar | Hariharan J | Hariharan S</div>
     <div class="h5 text-center mt-5">Contact Details</div>
     <div class="pb-5 pt-3">
-      <table class="border">
-        <tbody><tr>
-          <td>Arvind Kumar</td>
-          <td>963548959</td>
-          <td>https://www.linkedin.com/in/thearvikumar/</td>
-        </tr>
-        <tr>
-          <td>Hariharan J</td>
-          <td>9898495525</td>
-          <td>https://www.linkedin.com/in/hariharan-jayachandran-008931221/</td>
-        </tr>
-        <tr>
-          <td>Hariharan S</td>
-          <td>9360745166</td>
-          <td>https://www.linkedin.com/in/hariharan-s-562027226/</td>
-        </tr>
-      </tbody></table>
+      <table class="border contact-table">
+        <tbody>
+          <tr>
+            <td class="contact-name">Arvind Kumar</td>
+            <td class="contact-number">963548959</td>
+            <td class="contact-linkedin"><a href="https://www.linkedin.com/in/thearvikumar/">https://www.linkedin.com/in/thearvikumar/</a></td>
+          </tr>
+          <tr>
+            <td class="contact-name">Hariharan J</td>
+            <td class="contact-number">9898495525</td>
+            <td class="contact-linkedin"><a href="https://www.linkedin.com/in/hariharan-jayachandran-008931221/">https://www.linkedin.com/in/hariharan-jayachandran-008931221/</a></td>
+          </tr>
+          <tr>
+            <td class="contact-name">Hariharan S</td>
+            <td class="contact-number">9360745166</td>
+            <td class="contact-linkedin"><a href="https://www.linkedin.com/in/hariharan-s-562027226/">https://www.linkedin.com/in/hariharan-s-562027226/</a></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script>
     $(document).ready(function(){

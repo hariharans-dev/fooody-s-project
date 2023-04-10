@@ -1,14 +1,20 @@
 .t{
-  font-family: 'Satisfy', cursive;
+  font-family: 'Poppins', sans-serif;
   font-size: xx-large;
+  font-weight: bolder;
+  
   color: brown;
 }
 body{
-    background-color: gainsboro;
+  background-image: url("resources/menubackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .food{
-  background-color: orange;
+  background-color: rgba(255, 255, 255, 0.7); /* set opacity to 0.2 */
+  color: black;
 }
+
 .a1 {
   /* margin-top: 10px; */
   background-color: white;
@@ -115,17 +121,9 @@ td{
   margin-bottom: 30px;
 }
 
-.dosa .display-3 {
-  font-size: 48px;
-  font-weight: bold;
-  color: #333;
-}
 
-.dosa .h4 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
+
+
 
 .dosa table {
   margin-left: 0;
@@ -236,7 +234,7 @@ td{
   object-fit: contain;
 }
 
-.dosa-header {
+.dosa-header .display-3 {
   background-color: orange;
   color: white;
   padding: 10px;
@@ -244,7 +242,7 @@ td{
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.dosa-header:hover {
+.dosa-header .display-3:hover {
   background-color: white;
   color: orange;
 }
@@ -254,7 +252,7 @@ td{
   color: white;
   padding: 10px;
   border-radius: 5px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out
 }
 
 .pasta-header:hover {
@@ -262,7 +260,21 @@ td{
   color: orange;
 }
 
-.panner-header {
+.panner-header .display-3 {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out
+}
+
+.panner-header .display-3:hover {
+  background-color: white;
+  color: orange;
+}
+
+
+.parotta-title {
   background-color: orange;
   color: white;
   padding: 10px;
@@ -270,20 +282,56 @@ td{
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.panner-header:hover {
+.parotta-title:hover {
   background-color: white;
   color: orange;
 }
 
-.parotta-header {
-  background-color: orange;
-  color: white;
+.contact-table {
+  border-collapse: separate;
+  border-spacing: 0px;
+  width: 100%;
+}
+
+.contact-table td {
   padding: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  text-align: center;
+  border: 1px solid white;
+  color: white;
 }
 
-.parotta-header:hover {
-  background-color: white;
-  color: orange;
+
+
+.contact-name {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
+
+.contact-number {
+  font-size: 1.1rem;
+}
+
+.contact-linkedin {
+  font-size: 1.1rem;
+}
+
+.contact-linkedin a {
+  color: white;
+  text-decoration: underline;
+}
+
+.contact-linkedin a:hover {
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: orange !important;
+  color: yellow !important;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary{
+  margin-left: 45%;
+}
+
