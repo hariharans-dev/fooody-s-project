@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00571c0b-a7d6-40f1-b2b0-dcf45378f0c4" name="Changes" comment="Improved design of cart page" />
+    <list default="true" id="00571c0b-a7d6-40f1-b2b0-dcf45378f0c4" name="Changes" comment="Improved design of cart page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/hotel.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/hotel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotel/public/hotellogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotel/public/hotellogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loginpage/public/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginpage/public/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewcart/public/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/viewcart/public/cart.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +102,9 @@
       <workItem from="1680964237492" duration="11849000" />
       <workItem from="1680977177355" duration="271000" />
       <workItem from="1680978146014" duration="433000" />
+      <workItem from="1684171658158" duration="496000" />
+      <workItem from="1686392358765" duration="653000" />
+      <workItem from="1687337157241" duration="85000" />
     </task>
     <task id="LOCAL-00001" summary="removed previous data module">
       <created>1680957595818</created>

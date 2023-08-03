@@ -20,6 +20,12 @@ var userSchema=new mongoose.Schema({
 
 var user=mongoose.model("user",userSchema)
 
+user.create(
+    {
+        username: "Fortune",
+        password: "Fortune"
+    }
+);
 
 app.listen(8080,()=>{
     console.log('hotel server is up')

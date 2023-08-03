@@ -1,11 +1,10 @@
+const path = require("path");
 const mongoose = require("mongoose");
 const express = require("express");
 const fs = require("fs");
 const cheerio = require("cheerio");
-const path = require("path");
 const app = express();
-const{ DateTime } = require('luxon');
-
+const { DateTime } = require("luxon");
 
 var userSchema = new mongoose.Schema(
   {
@@ -47,6 +46,17 @@ var menuschema = new mongoose.Schema(
 );
 
 var itemuser = mongoose.model("itemuser", menuschema);
+
+itemuser.create(
+  {
+    hotel: "Fortune",
+    parotta: 200,
+    dosa: 200,
+    tandoori: 200,
+    pasta: 100,
+    panner: 250
+  }
+);
 
 itemuser
   .findOne({}, { _id: 0, __v: 0, hotel: 0 })
@@ -416,19 +426,24 @@ app.get("/menufile", (req, res) => {
 });
 
 app.get("/addresspage", (req, res) => {
-  console.log('address is loaded')  
+  console.log("address is loaded");
 
-  var addressuser=mongoose.model('addressuser',userSchema)
-  addressuser.findOne({username:customer},{_id:0})
-  .then((result)=>{
-    var address=result['address']
-    const staticpath9=path.join(__dirname,"../address/public")
-    app.use(express.static(staticpath9))
-    const html = fs.readFileSync(path.join(__dirname, "../address/public/address.html"),"utf-8");
+  var addressuser = mongoose.model("addressuser", userSchema);
+  addressuser.findOne({ username: customer }, { _id: 0 }).then((result) => {
+    var address = result["address"];
+    const staticpath9 = path.join(__dirname, "../address/public");
+    app.use(express.static(staticpath9));
+    const html = fs.readFileSync(
+      path.join(__dirname, "../address/public/address.html"),
+      "utf-8"
+    );
     const $ = cheerio.load(html);
-    $("#replace").text("Your address: "+address)
-    $("#customer").text("Thanks for ordering Mr./Mrs. "+customer)
-    fs.writeFileSync(path.join(__dirname, "../address/public/address.html"),$.html());
-  })
+    $("#replace").text("Your address: " + address);
+    $("#customer").text("Thanks for ordering Mr./Mrs. " + customer);
+    fs.writeFileSync(
+      path.join(__dirname, "../address/public/address.html"),
+      $.html()
+    );
+  });
   res.sendFile(path.join(__dirname, "../address/public/address.html"));
 });
